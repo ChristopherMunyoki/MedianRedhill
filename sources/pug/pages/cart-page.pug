@@ -1,0 +1,75 @@
+extends  ../_skeleton
+
+//- Includes
+
+block variables
+	- var activeIndex = 5
+	- var pageName = 'Cart Page'
+	- var pageClass = ''
+
+block title
+	title=pageName
+
+block page
+	// Page Header
+	+navbar-default({})
+
+	+page-title({
+		title: pageName,
+		imageName: 'breadcrumbs-shop',
+		path: [['Shop', '#'], [pageName]]
+	})
+
+	section.section-md.bg-white
+		.shell
+			.range.range-50.range-center
+				.cell-lg-10
+					h4.text-regular.spacing-0 2 Items in your cart
+					.table-custom-responsive.table-custom-cart
+						table.table-cart
+							tbody
+								tr
+									td
+										.product-number.stepper-var-2
+											input.form-input(type="number" data-zeros="true" value="1" min="1" max="1000")
+									td
+										a(href="single-product.html"): +jpg('product-14-101x100')
+
+									td
+										p.product-category Fitness Devices
+										h5.product-name
+											a(href="single-product.html") iStep Fitness Tracker
+
+									td: span.price $40
+
+									td
+										a(href="#").link-close: span.mdi.mdi-window-close
+
+								tr
+									td
+										.product-number.stepper-var-2
+											input.form-input(type="number" data-zeros="true" value="1" min="1" max="1000")
+									td
+										a(href="single-product.html"): +jpg('product-15-101x100')
+
+									td
+										p.product-category Fitness Devices
+										h5.product-name
+											a(href="single-product.html") SPRI Dumbbells
+
+									td: span.price $48
+
+									td
+										a(href="#").link-close: span.mdi.mdi-window-close
+
+					.text-right.total
+						span.total-descr Total:
+						span.total-prices $88
+
+					.text-right.button-inset-xs-20
+						.button.button-lg.btn-anis.button-icon.button-icon-left.button-gray-1
+							span.icon.icon-md.fl-outicons-shopping-cart13
+							| Proceed to checkout
+
+	// Page Footer
+	include ../sections/_footer-var-2

@@ -1,0 +1,188 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_panel-top-switch-sort
+
+block variables
+	- var activeIndex = 5
+	- var pageName = 'Shop'
+	- var pageClass = ''
+
+block title
+	title Shop List
+
+block page
+	// Page Header
+	+navbar-default({})
+
+	+page-title({
+		title: pageName,
+		imageName: 'breadcrumbs-shop',
+		path: [['Additional Pages', '#'], [pageName]]
+	})
+
+	section.section-md.bg-white
+		.shell.shell-custom
+			.range.range-50.range-lg-justify
+				.cell-md-3.cell-xs-12.cell-lg-container-2
+					.range.range-60
+						.cell-md-12.cell-sm-4
+							h5.title-decor-bottom.text-regular Categories
+							.sidebar-shop-filter
+
+								ul.list.list-shop-filter.checkbox-inline
+									li
+										label
+											input(name="input-group-radio", value="checkbox-1", type="checkbox")
+											| Fitness Devices
+											=" "
+											span (8)
+
+									li
+										label
+											input(name="input-group-radio", value="checkbox-2", type="checkbox")
+											| Home Gym
+											=" "
+											span (6)
+
+									li
+										label
+											input(name="input-group-radio", value="checkbox-3", type="checkbox")
+											| Health & Beauty
+											=" "
+											span (4)
+
+									li
+										label
+											input(name="input-group-radio", value="checkbox-4", type="checkbox")
+											| Sports & Activities
+											=" "
+											span (7)
+
+						.cell-md-12.cell-sm-4
+							h5.title-decor-bottom.text-regular Price
+							.sidebar-shop-filter
+
+								ul.list.list-shop-filter.checkbox-inline
+									li
+										label
+											input(name="input-group-radio", value="checkbox-1", type="checkbox")
+											| Under $10
+											=" "
+											span (8)
+
+									li
+										label
+											input(name="input-group-radio", value="checkbox-2", type="checkbox")
+											| $10 - $20
+											=" "
+											span (6)
+
+									li
+										label
+											input(name="input-group-radio", value="checkbox-3", type="checkbox")
+											| $20 - $40
+											=" "
+											span (4)
+
+									li
+										label
+											input(name="input-group-radio", value="checkbox-4", type="checkbox")
+											| $40 - $60
+											=" "
+											span (7)
+
+						.cell-md-12.cell-sm-4
+							h5.title-decor-bottom.text-regular Brands
+							.sidebar-shop-filter
+
+								ul.list.list-shop-filter.checkbox-inline
+									li
+										label
+											input(name="input-group-radio", value="checkbox-1", type="checkbox")
+											| All Brands
+											=" "
+											span (8)
+
+									li
+										label
+											input(name="input-group-radio", value="checkbox-2", type="checkbox")
+											| Nike
+											=" "
+											span (6)
+
+									li
+										label
+											input(name="input-group-radio", value="checkbox-3", type="checkbox")
+											| Reebok
+											=" "
+											span (4)
+
+									li
+										label
+											input(name="input-group-radio", value="checkbox-4", type="checkbox")
+											| New Balance
+											=" "
+											span (7)
+
+				.cell-md-9.cell-xs-12.cell-lg-container-3
+					+panel-top-switch-sort({
+						listActive: 'active'
+					})
+
+					.range.range-30.range-center
+						.cell-sm-12.cell-xs-10
+							.box-product-horizontal
+								.unit.unit-spacing-0.unit-sm-horizontal
+									.unit__left
+										a(href="single-product.html"): +jpg('product-7-301x306')
+
+									.unit__body
+										.box-product-content
+											.box-product-content-wrap
+												h4: a(href="single-product.html") iStep Fitness Tracker
+												.box-product-price
+													span.price $40.00
+												p This fitness tracker not only counts steps, calories, floors climbed and intensity minutes, it uses GPS satellites to track how far and how fast you go during almost any activity.
+												a(href="cart-page.html").button.button-effect-ujarak.button-gray-1 Add to cart
+
+						.cell-sm-12.cell-xs-10
+							.box-product-horizontal
+								.unit.unit-spacing-0.unit-sm-horizontal
+									.unit__left
+										a(href="single-product.html"): +jpg('product-8-301x306')
+
+									.unit__body
+										.box-product-content
+											.box-product-content-wrap
+												h4: a(href="single-product.html") SPRI Dumbbells
+												.box-product-price
+													span.price-before-sale $56.00
+													span.price $24.00
+												p These durable, vinyl-coated dumbbells that are color-coded for easy weight identification. Ideal for aerobics, step training or walking. Available in weights ranging from 1 to 20 pounds.
+												a(href="cart-page.html").button.button-effect-ujarak.button-gray-1 Add to cart
+
+						.cell-sm-12.cell-xs-10
+							.box-product-horizontal
+								.unit.unit-spacing-0.unit-sm-horizontal
+									.unit__left
+										a(href="single-product.html"): +jpg('product-9-301x306')
+
+									.unit__body
+										.box-product-content
+											.box-product-content-wrap
+												h4: a(href="single-product.html") YES4ALL Yoga Mat
+												.box-product-price
+													span.price $14.00
+												p Extra thick exercise mat is ideal for anything from Yoga, Pilates, Sit-ups, Push-ups, Stretching and other floor exercises. For Yoga, it’s ideal for slow-paced Kundalini or Restorative Yoga.
+
+												a(href="cart-page.html").button.button-effect-ujarak.button-gray-1 Add to cart
+
+					+pagination(['text-center'])
+
+
+	='\n'
+
+
+	// Page Footer
+	include ../sections/_footer-var-2

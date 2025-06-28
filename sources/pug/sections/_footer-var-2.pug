@@ -1,0 +1,28 @@
+footer.page-footer.footer-var-2.text-center
+	.shell
+		.range.range-20.range-sm-0.range-center.range-middle
+			.cell-sm-4.text-sm-left
+				p=brandName
+					=" "
+					| &#169; #[span(id="copyright-year")].
+					=" "
+					a(href="privacy-policy.html") Privacy Policy
+
+			.cell-sm-4.text-center
+				+widget-list([
+					{
+						"icon": "fa fa-instagram",
+						"href": "#"
+					},
+					{
+						"icon": "fa fa-facebook",
+						"href": "#"
+					},
+					{
+						"icon": "fa fa-twitter",
+						"href": "#"
+					}
+				], '', 'footer-social')
+
+			.cell-sm-4.text-sm-right
+				a(href="mailto:#") info@demolink.org

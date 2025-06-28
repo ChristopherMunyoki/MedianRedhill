@@ -1,0 +1,153 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_post-var-3
+include ../elements/_ui-insta-thumb-big
+
+block variables
+	- var activeIndex = 5
+	- var pageName = 'Partner with Us'
+	- var pageClass = ''
+
+block title
+	title=pageName
+
+block page
+	// Page Header
+	+navbar-default({})
+
+	+page-title({
+		title: pageName,
+		imageName: 'breadcrumbs-partner',
+		path: [['Additional Pages', '#'], [pageName]]
+	})
+
+	section.section-md.bg-white
+		.shell.shell-fluid-var-4
+			.range.range-50.range-md-90.range-lg-justify
+				.cell-lg-9.cell-xs-12.cell-lg-container
+					.range.range-50.range-md-100.range-center
+						.cell-xs-12
+							.box-info.box-info-var-3.box-info-border.box-info-var-4
+								.box-info-wrap.box-info-two-column.spacing-50.text-xs-left
+									.colunm-first
+										h3 Beneficial cooperation
+										p We invite all companies to take part in our partner program. You can promote your products and services by cooperating with us.
+										p Partnership is at the heart of everything we do and it has been since we started our blog. We are driven by our mission to build trust and opportunity globally between our partners and readers and we have ambitious goals that can only be achieved by working with others. We invite you to become a part of real cooperation.
+
+									.colunm-second
+										.unit.unit-middle.unit-spacing-lg.unit-xs-horizontal
+											.unit__left
+												span.text-secondary.icon-73.mercury-icon-group
+											.unit__body
+												h5 Large audience
+												p Promote your products to lots of people
+
+										.unit.unit-middle.unit-spacing-lg.unit-xs-horizontal
+											.unit__left
+												span.text-secondary.icon-70.mercury-icon-target-2
+											.unit__body
+												h5 Profitable advertising
+												p Advertise your services to any target group.
+
+										.unit.unit-middle.unit-spacing-lg.unit-xs-horizontal
+											.unit__left
+												span.text-secondary.icon-70.mercury-icon-partners
+											.unit__body
+												h5 Adequate price
+												p Get affordably priced promotion services.
+
+						.cell-xs-12
+							.box-counter-1.box-info-border
+								.box-wrap-around
+									.box-counter
+										.counter(data-from='0', data-to='11756') 11756
+										p.box-counter-title Visitors per day
+
+									.box-counter
+										.counter.counter-percent(data-from='0', data-to='100') 100
+										p.box-counter-title Quality traffic
+
+									.box-counter
+										.counter(data-from='0', data-to='35428') 35428
+										p.box-counter-title Visits per month
+
+						.cell-xs-12
+							.section-md.section-inset-horizontal-15.context-dark.bg-partner-1.bg-image.text-center
+								h3 Our Partners
+								p.spacing-50.text-width-500 We work with an extensive range of companies, both big and small. You can also benefit from working with us.
+								.box-partner
+									.box-wrap-around
+										.box-partner-item
+											a(href="#"): +png('partner-2-169x68')
+										.box-partner-item
+											a(href="#"): +png('partner-3-121x97')
+										.box-partner-item
+											a(href="#"): +png('partner-4-126x68')
+										.box-partner-item
+											a(href="#"): +png('partner-5-138x55')
+
+
+					.range.range-50.range-center
+						.cell-xs-12
+							p.title-decor-bottom Examples of advertising posts
+
+						.cell-md-12.cell-sm-6
+							+post-var-3({
+								imgName: "home3-6-585x433",
+								postClass: 'post-var-3 post-var-3__gray post-custom-3',
+								unitClass: "unit-md-horizontal",
+								postTags1: "Beauty",
+								postTags2: "Health",
+								postTitle: "Everything Need to Know About a Fashionable Life",
+								postText: "Discover the latest clothing trends from fashion's top designers—and see what brands and what clothes we recommend you to look at.",
+								dateTime: "2017-04-27",
+								postTime: "April 27, 2017",
+								postViews: "6424",
+							})
+
+						.cell-md-12.cell-sm-6
+							+post-var-3({
+								imgName: "home3-7-585x433",
+								postClass: 'post-var-3 post-var-3__gray post-custom-3',
+								unitClass: "unit-md-horizontal unit-md--inverse",
+								postTags1: "Lifestyle",
+								postTags2: "Health",
+								postTitle: "How To Increase Workflow and Reduce Stress",
+								postText: "Stress influences our lives not in the best way, and to avoid its effect, everyone needs to learn some stress management techniques.",
+								dateTime: "2017-06-25",
+								postTime: "June 25, 2017",
+								postViews: "898",
+							})
+
+				.cell-lg-3.cell-xs-12
+					.range.range-50.range-lg-90.range-sm-bottom.range-center.post-sidebar
+						.cell-lg-12.cell-md-6.cell-sm-6.text-center
+							.post-sidebar-form-2.bg-sidebar-form-2.bg-image.sidebar-border
+								.post-sidebar-form-content
+									p.post-tagline Join now
+									h3 Partner Program
+									.decor-center-small.bg-secondary-light
+									p Join our partner program today and get instant benefits!
+								// RD Mailform
+								form.rd-mailform.rd-mailform-lg(data-form-output="form-output-global", data-form-type='subscribe', method='post', action='bat/rd-mailform.php')
+									.form-wrap
+										input#subscribe-email.form-input.form-input-lg(type="email" name="email" data-constraints="@Email @Required")
+										label.form-label(for="subscribe-email") E-mail
+									button(type="submit").button.button-lg.btn-anis.button-secondary-light Join the program
+
+						.cell-lg-12.cell-md-6.cell-sm-6.text-left
+							p.sidebar-category Latest Posts
+							include ../sections/_sidebar-post
+
+						.cell-lg-12.cell-md-6.text-left
+							p.sidebar-category Instagram Feed
+							.instafeed.text-center(data-instafeed-tagname='tm_62006', data-instafeed-get='tagged', data-instafeed-sort='least-liked' data-lightgallery='group')
+								.range.range-10.range-narrow
+									- for (var i = 0; i < 6 ; i++)
+										.cell-xxs-6.cell-xs-4.cell-sm-4.cell-md-4(data-instafeed-item='')
+											+thumbnail-instafeed-big({className: 'thumbnail-instafeed-minimal'})
+
+
+	// Page Footer
+	include ../sections/_footer-var-2

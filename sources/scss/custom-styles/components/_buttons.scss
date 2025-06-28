@@ -1,0 +1,486 @@
+//
+// Buttons
+// --------------------------------------------------
+
+// Button General Styles
+.button {
+  display: inline-block;
+  width: auto;
+  max-width: 100%;
+  @include btn-size(11px, 45px, $btn-font-size, 24px, 0);
+  font-family: $btn-font-family;
+  font-weight: $btn-font-weight;
+  letter-spacing: .05em;
+  transition: .33s all ease;
+  border: 2px solid;
+  white-space: normal;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+// Appearance style
+// --------------------------------------------------
+
+.page {
+  .button-default {
+    @include btn-variant($gray-darker, transparent, $gray, $white, $gray-darker, $gray-darker);
+  }
+
+  .button-primary {
+    @include btn-variant($white, $primary, $primary, $white, $secondary, $secondary);
+  }
+
+  .button-primary-outline {
+    @include btn-variant($primary, transparent, $primary, $gray-darker, $primary, $primary);
+  }
+
+  .button-secondary {
+    @include btn-variant($white, $secondary, $secondary, $white, $primary, $primary);
+  }
+
+  .button-secondary-dark {
+    @include btn-variant($white, $secondary-dark, $secondary-dark, $white, $primary, $primary);
+  }
+
+  .button-secondary-light {
+    @include btn-variant($gray-darker, $secondary-light, $secondary-light, $white, $primary, $primary);
+  }
+
+  .button-white-1 {
+    @include btn-variant($gray-darker, $white, $white, $white, $primary, $primary);
+
+    font-weight: 400;
+  }
+
+  .button-white-2 {
+    @include btn-variant($gray-darker, $white, $white, $gray-darker, $secondary-light, $secondary-light);
+
+    font-weight: 400;
+  }
+
+  .button-white-outline {
+    @include btn-variant($white, transparent, $white, $gray-darker, $primary, $primary);
+  }
+
+  .button-gray-1 {
+    @include btn-variant($white, $gray-1, $gray-1, $white, $primary, $primary);
+  }
+
+  .button-gray-dark {
+    @include btn-variant($white, $gray-dark, $gray-dark, $white, $primary, $primary);
+  }
+
+  .button-gray-light-outline {
+    @include btn-variant($gray-darker, transparent, $gray-light, $gray-darker, $primary, $primary);
+  }
+
+  .button-gray-9-outline {
+    @include btn-variant($gray-darker, transparent, $gray-9, $white, $primary, $primary);
+  }
+
+  .button-gray-darker-outline {
+    @include btn-variant($gray-darker, transparent, $gray-darker, $white, $primary, $primary);
+  }
+
+  .button-facebook {
+    &,
+    &:active,
+    &:focus {
+      color: $white;
+      background: $facebook;
+      border-color: $facebook;
+    }
+
+    &:hover {
+      color: $white;
+      background: darken($facebook, 11%);
+      border-color: darken($facebook, 11%);
+    }
+  }
+
+  .button-twitter {
+    &,
+    &:active,
+    &:focus {
+      color: $white;
+      background: $twitter;
+      border-color: $twitter;
+    }
+
+    &:hover {
+      color: $white;
+      background: darken($twitter, 11%);
+      border-color: darken($twitter, 11%);
+    }
+  }
+
+  .button-google {
+    &,
+    &:active,
+    &:focus {
+      color: $white;
+      background: $google;
+      border-color: $google;
+    }
+
+    &:hover {
+      color: $white;
+      background: darken($google, 11%);
+      border-color: darken($google, 11%);
+    }
+  }
+
+  //btn-Anis
+  .btn-anis {
+    position: relative;
+    overflow: hidden;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    z-index: 0;
+
+    &:before, &:after {
+      position: absolute;
+      top: 50%;
+      content: '';
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      -webkit-transition: 0.5s;
+      transition: 0.5s;
+      z-index: -1;
+    }
+
+    &:before {
+      left: -20px;
+      transform: translate(-40%, -50%);
+    }
+
+    &:after {
+      right: -20px;
+      transform: translate(40%, -50%);
+    }
+
+    &:hover {
+
+      &:before {
+        -webkit-animation: criss-cross-left 0.8s both;
+        animation: criss-cross-left 0.8s both;
+      }
+
+      &:after {
+        -webkit-animation: criss-cross-right 0.8s both;
+        animation: criss-cross-right 0.8s both;
+      }
+    }
+
+    &.button-white-1 {
+      border: none;
+
+      &:hover {
+        background: $white;
+      }
+
+      &::after,
+      &::before {
+        background: $primary;
+      }
+    }
+
+    &.button-white-2 {
+      border: none;
+
+      &:hover {
+        background: $white;
+      }
+
+      &::after,
+      &::before {
+        background: $secondary-light;
+      }
+    }
+
+    &.button-gray-1 {
+      border: none;
+
+      &:hover {
+        background-color: $gray-1;
+      }
+
+      &::after,
+      &::before {
+        background: $primary;
+      }
+    }
+
+    &.button-secondary-light {
+      border: none;
+
+      &:hover {
+        background-color: $secondary-light;
+      }
+
+      &::after,
+      &::before {
+        background: $primary;
+      }
+    }
+
+    &.button-secondary-light,
+    &.button-gray-1,
+    &.button-white-1,
+    &.button-white-2 {
+      &.button-lg {
+
+        @media (min-width: $screen-md-min) {
+          padding: 18px 30px;
+        }
+      }
+    }
+  }
+
+  //animation for .btn-anis
+  @-webkit-keyframes criss-cross-left {
+    0% {
+      left: -20px;
+    }
+    50% {
+      left: 50%;
+      width: 20px;
+      height: 20px;
+    }
+    100% {
+      left: 50%;
+      width: 375px;
+      height: 375px;
+    }
+  }
+
+  @keyframes criss-cross-left {
+    0% {
+      left: -20px;
+    }
+    50% {
+      left: 50%;
+      width: 20px;
+      height: 20px;
+    }
+    100% {
+      left: 50%;
+      width: 375px;
+      height: 375px;
+    }
+  }
+
+  @-webkit-keyframes criss-cross-right {
+    0% {
+      right: -20px;
+    }
+    50% {
+      right: 50%;
+      width: 20px;
+      height: 20px;
+    }
+    100% {
+      right: 50%;
+      width: 375px;
+      height: 375px;
+    }
+  }
+
+  @keyframes criss-cross-right {
+    0% {
+      right: -20px;
+    }
+    50% {
+      right: 50%;
+      width: 20px;
+      height: 20px;
+    }
+    100% {
+      right: 50%;
+      width: 375px;
+      height: 375px;
+    }
+  }
+}
+
+// Btn with shadow
+.button-shadow {
+  border: 0;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  box-shadow: 0 9px 21px 0 rgba(#1e1e1e, 0.15);
+
+  &:active,
+  &.active {
+    box-shadow: none;
+  }
+}
+
+// Button Sizes
+// --------------------------------------------------
+
+.button-xs {
+  @include btn-size(5px, 25px, 12px, 22px, 0);
+}
+
+.button-sm {
+  @include btn-size(6px, 25px, 13px, 24px, 0);
+}
+
+.button-lg {
+  @include btn-size(16px, 49px, 14px, 24px, 0);
+}
+
+.button-xl {
+  @include btn-size(21px, 50px, 18px, 29px, 0);
+
+  @media (min-width: $screen-lg-min) {
+    padding-left: 75px;
+    padding-right: 75px;
+  }
+}
+
+// Button Shapes
+// --------------------------------------------------
+
+.button-circle {
+  border-radius: 35px;
+}
+
+.button-round {
+  border-radius: 10px;
+}
+
+.button-rounded {
+  border-radius: 4px;
+}
+
+// Button Icon styles
+// --------------------------------------------------
+
+.page .button {
+  &.button-icon {
+    @include display-inline-flex;
+    @include flex-wrap(nowrap);
+    @include align-items(center);
+    @include justify-content(center);
+    vertical-align: middle;
+
+    .icon {
+      position: relative;
+      top: 1px;
+      display: inline-block;
+      vertical-align: middle;
+      color: inherit;
+      font-size: 1.65em;
+      line-height: 0;
+    }
+
+    &-left {
+      @include flex-direction(row);
+      .icon {
+        padding-right: 11px;
+      }
+    }
+
+    &-right {
+      @include flex-direction(row-reverse);
+      .icon {
+        padding-left: 11px;
+      }
+    }
+  }
+
+  &.button-post {
+    font-family: inherit;
+    letter-spacing: 0;
+    font-weight: 400;
+    text-transform: none;
+    padding: 4px 12px;
+    width: 90px;
+
+    .icon {
+      font-size: 13px;
+    }
+  }
+}
+
+.desktop {
+  .page {
+    .button-effect-ujarak {
+      position: relative;
+      z-index: 0;
+      transition: background 0.4s, border-color 0.4s, color 0.4s;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: -1px;
+        left: -1px;
+        width: calc(100% + 2px);
+        height: calc(100% + 2px);
+        background: $primary;
+        z-index: -1;
+        opacity: 0;
+        transform: scale3d(0.7, 1, 1);
+        transition: transform 0.4s, opacity 0.4s;
+        transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+      }
+
+      &,
+      &:before {
+        transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+      }
+
+      &:hover {
+        background-color: transparent;
+        &::before {
+          opacity: 1;
+          transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+        }
+      }
+
+      &.button-primary {
+        &::before {
+          background: $secondary;
+        }
+      }
+
+      &.button-gray-darker,
+      &.button-gray-9-outline,
+      &.button-gray-light-outline {
+        &::before {
+          background: $primary;
+        }
+      }
+
+      &.button-white-2 {
+        &::before {
+          background: $secondary-light;
+        }
+      }
+    }
+  }
+}
+
+// Button other styles
+// --------------------------------------------------
+.button-block {
+  display: block;
+  width: 100%;
+}
+
+.button-width-220 {
+  min-width: 200px;
+}
+
+.button-inset-xs-20 {
+
+  @media (max-width: $screen-xxs-max) {
+    .button {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+}

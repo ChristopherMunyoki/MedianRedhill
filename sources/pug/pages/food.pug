@@ -1,0 +1,130 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_post-var-1
+include ../elements/_ui-insta-thumb-big
+include ../elements/_panel-top-switch-filters
+
+block variables
+	- var activeIndex = 1
+	- var pageName = 'Food'
+	- var pageClass = ''
+
+block title
+	title=pageName
+
+block page
+	// Page Header
+	+navbar-default({})
+
+
+	+page-title({
+		title: pageName,
+		imageName: 'breadcrumbs-food',
+		path: [[pageName]]
+	})
+
+	section.section-md.bg-white.text-center
+		.shell.shell-fluid-var-4
+			.range.range-50.range-xlg-0.range-lg-justify
+				.cell-lg-9.cell-xs-12.cell-lg-container.isotope-wrap
+					.row.isotope-wrap
+						// Isotope Filters
+						.col-lg-12
+							+panel-top-switch-filters({
+								columnActive: 'active'
+							})
+
+						.col-lg-12
+
+							.row.isotope(data-isotope-layout='fitRows', data-isotope-group='gallery')
+								.col-md-4.col-sm-12.col-xs-12.isotope-item(data-filter='Type 2')
+									+post-var-1({
+										imgName: "food-1-347x241",
+										postClass: 'post-var-1 post-custom-1',
+										unitClass: 'unit-sm-horizontal unit-md-vertical',
+										postTags1: "Beauty",
+										postTags2: "Makeup",
+										postTitle: "Top 5 Sweet Recipes with Coconut",
+										postText: "Some makeup techniques may seem easy to follow, but they show great results...",
+										dateTime: "2017-01-03",
+										postTime: "january 3, 2017",
+										postViews: "524",
+									})
+
+								.col-md-4.col-sm-12.col-xs-12.isotope-item(data-filter='Type 1')
+									+post-var-1({
+										imgName: "food-2-347x241",
+										postClass: 'post-var-1 post-custom-1',
+										unitClass: 'unit-sm-horizontal unit-md-vertical',
+										postTags1: "Beauty",
+										postTags2: "Hair",
+										postTitle: "Popular Salads for Vegetarians",
+										postText: "Your most beautiful hair color will bring out the subtleties of your skin tone and...",
+										dateTime: "2017-01-15",
+										postTime: "january 15, 2017",
+										postViews: "524",
+									})
+
+								.col-md-4.col-sm-12.col-xs-12.isotope-item(data-filter='Type 4')
+									+post-var-1({
+										imgName: "food-3-347x241",
+										postClass: 'post-var-1 post-custom-1',
+										unitClass: 'unit-sm-horizontal unit-md-vertical',
+										postTags1: "Beauty",
+										postTags2: "Fashion",
+										postTitle: "Picking a Pomegranate for Breakfast",
+										postText: "Whether you're easing yourself into makeup or would simply like to try...",
+										dateTime: "2017-01-20",
+										postTime: "January 20, 2017",
+										postViews: "524",
+									})
+
+								.col-md-8.isotope-item(data-filter='Type 3')
+									+post-var-1({
+										imgName: "food-4-733x241",
+										postClass: 'post-var-1',
+										classTags: 'one-tags post-tags-custom',
+										postTags1: "must read",
+										postTitle: "Making Tasty Natural Coffee",
+										postText: "A Leather Handbag is an accessory that will often come in handy. A quality leather handbag should last you years. Whether you choose a timeless black or brown leather handbag, or something more colourful, it should be a design that reflects your personal style. Here are a few tips for choosing...",
+										dateTime: "2017-02-21",
+										postTime: "February 5, 2017",
+										postViews: "524",
+									})
+
+								.col-md-4.col-sm-12.col-xs-12.isotope-item(data-filter='Type 4')
+									+post-var-1({
+										imgName: "food-5-347x241",
+										postClass: 'post-var-1 post-custom-1',
+										unitClass: 'unit-sm-horizontal unit-md-vertical',
+										postTags1: "Beauty",
+										postTags2: "fashion",
+										postTitle: "How to Choose the Most Delicious Donut",
+										postText: "You don’t have to be a makeup genius to know that lipstick can make a big...",
+										dateTime: "2017-03-12",
+										postTime: "march 12, 2017",
+										postViews: "524",
+									})
+
+						.col-lg-12.offset-top-30
+							.post-video.post-video-var-1.context-dark
+								.post-video__image
+									+jpg('food-6-1119x593')
+
+								.post-video__body
+									a.link-control.post-video__control(data-lightbox='iframe', href='https://www.youtube.com/watch?v=KvZl4i91jtU')
+										span.link-control__inner
+									.post-video__caption
+										h3 Cooking the Breakfast Burrito: a Recipe to Enjoy Every Morning
+										h6 Let our culinary experts show you how it's done.
+
+							a(href="#").button.button-lg.button-width-220.btn-anis.button-gray-1 More
+
+				.cell-lg-3.cell-xs-12
+					include ../sections/_sidebar-long
+
+	='\n'
+
+	// Page Footer
+	include ../sections/_footer-var-2

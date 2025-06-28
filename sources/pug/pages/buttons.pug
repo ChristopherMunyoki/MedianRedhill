@@ -1,0 +1,90 @@
+extends  ../_skeleton
+
+//- Includes
+
+block variables
+	- var activeIndex = 5
+	- var pageName = 'Buttons'
+
+block title
+	title=pageName
+
+block page
+	// Page Header
+	+navbar-default({})
+
+	+page-title({
+		title: pageName,
+		imageName: 'breadcrumbs-typography',
+		path: [['Additional Pages', '#'], [pageName]]
+	})
+
+	// Buttons
+	section.section-md.bg-white.text-center
+		.shell
+			h3=pageName
+			p.spacing-50.text-width-360 Easily insert buttons and call-to-actions in any page, use amazing custom options to spice up your pages.
+	='\n'
+
+	section.section-md.bg-white.text-center
+		.shell
+			h4 Button Sizes
+			p.spacing-50 4 different sizes: super, large, default, and small.
+			.group-xl
+				.button.button-rounded.button-xl.button-primary super size
+				.button.button-rounded.button-lg.button-primary Large size
+				.button.button-rounded.button-primary Default size
+				.button.button-rounded.button-sm.button-primary small size
+	='\n'
+
+	hr
+
+	section.section-md.bg-white.text-center
+		.shell
+			h4 Button Shapes
+			p.spacing-50 4 different shapes: default, round, square and circle.
+			.group-xl
+				.button.button-rounded.button-primary Default
+				.button.button-primary.button-round Round
+				.button.button-primary.button-square Square
+				.button.button-primary.button-circle Circle
+
+	='\n'
+
+	hr
+
+	section.section-md.bg-white.text-center
+		.shell
+			h4 Buttons with Icons
+			p.spacing-50 Buttons are fully integrated with 900+ icons.
+			.group-xl
+				.button.button-rounded.button-icon.button-icon-right.button-primary
+					span.icon.icon-md.material-icons-person_outline
+					| Icon right
+
+				.button.button-rounded.button-icon.button-icon-left.button-primary
+					span.icon.icon-md.material-icons-info_outline
+					| Icon left
+
+				.button.button-rounded.button-icon.button-icon-right.button-gray-9-outline.button-effect-ujarak
+					span.icon.icon-md.material-icons-favorite_border
+					| Icon right
+
+				.button.button-rounded.button-icon.button-icon-left.button-gray-9-outline.button-effect-ujarak
+					span.icon.icon-md.material-icons-info_outline
+					| Icon left
+	='\n'
+
+	hr
+
+	section.section-md.bg-white.text-center
+		.shell
+			h4 Buttons with Shadow
+			p.spacing-50 Enhance your buttons with a shadow effect.
+			.group-xl
+				.button.button-circle.button-primary.button-shadow shadow
+				.button.button-circle.button-gray-9-outline.button-shadow shadow
+	='\n'
+
+	// Page Footer
+	include ../sections/_footer-var-2

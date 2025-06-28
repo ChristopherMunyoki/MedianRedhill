@@ -1,0 +1,48 @@
+extends  ../_skeleton
+
+//- Includes
+
+block variables
+	- var activeIndex = 5
+	- var pageName = 'Tables'
+
+block title
+	title=pageName
+
+block page
+	// Page Header
+	+navbar-default({})
+
+	+page-title({
+		title: pageName,
+		imageName: 'breadcrumbs-typography',
+		path: [['Additional Pages', '#'], [pageName]]
+	})
+
+	// Tables
+	section.section-md.bg-white.text-center
+		.shell
+			h3.text-regular.spacing-0=pageName
+			p.biger.text-width-medium Tables have always been perfect for displaying facts and numbers. Now you can benefit from using them on your website.
+
+			.range
+				.cell-xs-12
+					+table('table-custom-primary')
+	='\n'
+
+	hr
+
+	section.section-md.bg-white.text-center
+		.shell
+			+table('table-custom-lighter')
+	='\n'
+
+	hr
+
+	section.section-md.bg-white.text-center
+		.shell
+			+table(['table-custom-primary', 'table-custom-striped'])
+	='\n'
+
+	// Page Footer
+	include ../sections/_footer-var-2

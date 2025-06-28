@@ -1,0 +1,35 @@
+extends  ../_skeleton
+
+block variables
+	- var activeIndex = 10
+	- var pageName = 'Search results'
+
+block title
+	title=pageName
+
+block page
+	// Page Header
+	+navbar-default({})
+
+	+page-title({
+		title: pageName,
+		imageName: 'breadcrumbs-contacts',
+		path: [[pageName]]
+	})
+
+	//Search results
+	section.section-md.bg-white
+		.shell
+			.range.range-60.range-center
+				.cell-md-10
+					form.rd-search.search-form-classic(action="search-results.html" method="GET")
+						.form-wrap
+							input.form-input(id="rd-search-form-input" type="text" name="s" autocomplete="off")
+							label.form-label(for="rd-search-form-input") Search
+						button.rd-search-submit(type='submit')
+
+				.cell-md-10
+					.rd-search-results
+
+	// Page Footer
+	include ../sections/_footer-var-2

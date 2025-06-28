@@ -1,0 +1,169 @@
+extends  ../_skeleton
+
+block variables
+	- var activeIndex = 5
+	- var pageName = 'Typography'
+
+block title
+	title=pageName
+
+block page
+	// Page Header
+	+navbar-default({})
+
+	+page-title({
+		title: pageName,
+		imageName: 'breadcrumbs-typography',
+		path: [['Additional Pages', '#'], [pageName]]
+	})
+
+	section.section-md.bg-white.text-left
+		.shell
+			.range
+				.cell-lg-8.cell-md-10
+					.section-typography-body
+						h1 H1 Heading
+						p Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+
+						h2 H2 Heading
+						p Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+
+						h3 H3 Heading
+						p Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+
+						h4 H4 Heading
+						p Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+
+						h5 H5 Heading
+						p Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+
+						h6 H6 Heading
+						p.text-gray-dark Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+
+	section.section-md.bg-white.section-typography-body.text-left
+		.shell
+			.range
+				.cell-lg-8.cell-md-10
+
+					h3.spacing-0 Blockquote
+
+					.quote.quote-primary
+						.quote-primary__body
+							svg.quote-primary__mark(version='1.1', baseprofile='tiny', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', width='21px', height='15px', viewbox='0 0 21 15', overflow='scroll', xml:space='preserve', preserveAspectRatio='none')
+								path(d='M9.597,10.412c0,1.306-0.473,2.399-1.418,3.277c-0.944,0.876-2.06,1.316-3.349,1.316\
+												 c-1.287,0-2.414-0.44-3.382-1.316C0.482,12.811,0,11.758,0,10.535c0-1.226,0.58-2.716,1.739-4.473L5.603,0H9.34L6.956,6.37\
+												 C8.716,7.145,9.597,8.493,9.597,10.412z M20.987,10.412c0,1.306-0.473,2.399-1.418,3.277c-0.944,0.876-2.06,1.316-3.35,1.316\
+												 c-1.288,0-2.415-0.44-3.381-1.316c-0.966-0.879-1.45-1.931-1.45-3.154c0-1.226,0.582-2.716,1.74-4.473L16.994,0h3.734l-2.382,6.37\
+												 C20.106,7.145,20.987,8.493,20.987,10.412z')
+							.quote-primary__text: p.q Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+
+						.quote-primary__footer
+							span.cite Dennis Williams
+
+	section.section-md.bg-white.section-typography-body.text-left
+		.shell
+			.range
+				.cell-lg-8.cell-md-10
+					h3.spacing-0 HTML Text Elements
+					p.text-gray-dark.offset-top-30.
+						Welcome to our wonderful world. #[span.text-bold This is a bold text] #[a(href="#") Link text] #[a.link-hover(href="#") Link hover text] #[a.link-press(href="#") Press link] #[span.tooltip-custom #[span(data-toggle='tooltip', data-placement='top', title='Welcome to our wonderful world') Tooltips]] We sincerely hope that #[mark each and every user] entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page. #[span.text-strike This is a strickethrough text] #[span.text-underline This is an underlined text].
+
+	section.section-md.bg-white.section-typography-body.text-left
+		.shell
+			.range
+				.cell-lg-8.cell-md-10
+					h3.spacing-0 Unordered List
+
+					p.text-gray-dark.offset-top-30 We specialize in a variety of services. Our aim is to deliver the top level of customer service based on your requests.
+
+					ul.list-marked
+						li Consulting
+						li Customer Service
+						li Innovation
+						li Management
+						li Ethics
+
+					p.text-gray-dark We hope that with our services you will receive the most personalized help in purchasing any kind of products you are looking for.
+
+					h3.spacing-0 Ordered List
+
+					p.text-gray-dark.offset-top-30 We specialize in a variety of services. Our aim is to deliver the top level of customer service based on your requests.
+
+					ul.list-ordered
+						li
+							span.list-index-counter
+							| Consulting
+						li
+							span.list-index-counter
+							| Customer Service
+						li
+							span.list-index-counter
+							| Innovation
+						li
+							span.list-index-counter
+							| Management
+						li
+							span.list-index-counter
+							| Ethics
+
+					p.text-gray-dark We hope that with our services you will receive the most personalized help in purchasing any kind of products you are looking for.
+
+	// Icon List
+	section.section-md.bg-white.section-typography-body
+		.shell
+			h3 Icon List
+			.range.range-50
+				.cell-xs-6.cell-md-4
+					article.box-minimal
+						span.box-minimal-icon.fa.fa-lg.fa-thumbs-up
+						h4.box-minimal-title Best Service
+						.box-minimal-divider
+						.box-minimal-text Our mission is to attract and retain customers by providing Best in Class solutions and fostering a profitable, disciplined culture of safety, service, and trust.
+
+				.cell-xs-6.cell-md-4
+					article.box-minimal
+						span.box-minimal-icon.fa.fa-md.fa-group
+						h4.box-minimal-title Reputation
+						.box-minimal-divider
+						.box-minimal-text We have established a strong presence in the industry. Our award-winning services earn a reputation for quality and excellence that few can rival.
+
+				.cell-xs-6.cell-md-4
+					article.box-minimal
+						span.box-minimal-icon.fa.fa-lg.fa-lock
+						h4.box-minimal-title Safety & Security
+						.box-minimal-divider
+						.box-minimal-text Safety for our employees, customers and the community we work with will always remain our primary focus in all the policies, procedures and programs.
+	='\n'
+
+	section.section-md.bg-white.section-typography-body.text-left
+		.shell
+			h3.spacing-0 Image Centered
+			.range.range-60
+				.cell-lg-8.cell-md-10
+					figure.thumb-default
+						+jpg('typography-1-770x485')
+						figcaption
+							p.text-gray-lighter A Variety of Healthy Recipes
+					p Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+
+	section.section-md.bg-white.section-typography-body.text-left
+		.shell
+			h3.spacing-0 Image Left
+			.range.range-xs-center.range-md-left
+				.cell-sm-6.cell-md-5.cell-lg-4
+					+jpg('typography-2-350x220', 'img-responsive')
+				.cell-sm-6.cell-md-5.cell-lg-4
+					p Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+
+	section.section-md.bg-white.section-typography-body.text-left
+		.shell
+			h3 Image Right
+			.range.range-xs-center.range-md-right.range-sm-reverse
+				.cell-sm-6.cell-md-5.cell-lg-4
+					+jpg('typography-2-350x220', 'img-responsive')
+				.cell-sm-6.cell-md-5.cell-lg-4
+					p Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+
+
+	// Page Footer
+	include ../sections/_footer-var-2

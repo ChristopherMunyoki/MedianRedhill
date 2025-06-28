@@ -1,0 +1,147 @@
+extends  ../_skeleton
+
+block variables
+	- var activeIndex = 5
+	- var pageName = 'Careers'
+	- var pageClass = ''
+
+block title
+	title=pageName
+
+block page
+	// Page Header
+	+navbar-default({})
+
+	+page-title({
+		title: pageName,
+		imageName: 'breadcrumbs-careers',
+		path: [['Additional Pages', '#'], [pageName]]
+	})
+
+	section.section-md.bg-white
+		.shell.shell-fluid-var-4
+			.range.range-50.range-xs-90.range-lg-justify
+				.cell-lg-9.cell-xs-12.cell-lg-container
+					.range.range-50.range-md-100.range-center
+						.cell-md-12.cell-sm-10
+							.box-info.box-info-var-3.box-info-border
+								.box-info-wrap
+									.unit.unit-spacing-sm.unit-md-horizontal
+										.unit__left
+											+jpg('careers-1-466x398')
+
+										.unit__body
+											.box-info-content
+												h3 Your career starts here!
+												p Take a job opportunity of a lifetime – join the team of Life News. We cherish active authors and bloggers willing to work on varied topics and on articles of any complexity. Here are some of the hot vacancies:
+												ul.list.list-marked.list-size-big.list-gray-darker.list-family-sec.list-md-two-columns
+													li Junior Blogger
+													li Senior Editor
+													li Fashion Blogger
+													li PR Manager
+												a(href="#").button.button-lg.button-gray-darker-outline.button-effect-ujarak join our team now
+
+
+						.cell-xs-12.text-center.context-custom-1
+							.section-md.bg-gray-5
+								.shell-fluid-var-5
+									h2 Available Positions
+									p Can't find the job you want? Send your resume to
+										=" "
+										a(href="mailto:#").text-gray-light info@demolink.org
+										| , and we'll contact you.
+									.range.range-30
+										.cell-md-6.cell-sm-6.cell-xs-12
+											.post-address
+												.post-address-content
+													h4: a(href="#") Copywriter
+													.group-md
+														span.post-panel
+															span.material-icons-location_on
+															span Chicago
+
+														span.post-panel
+															span.material-icons-av_timer
+															span Full Time
+
+														span.post-panel
+															span.mdi.mdi-clock
+															span 6 hours ago
+
+										.cell-md-6.cell-sm-6.cell-xs-12
+											.post-address
+												.post-address-content
+													h4: a(href="#") Blogger
+													.group-md
+														span.post-panel
+															span.material-icons-location_on
+															span Chicago
+
+														span.post-panel
+															span.material-icons-av_timer
+															span Full Time
+
+														span.post-panel
+															span.mdi.mdi-clock
+															span 6 hours ago
+
+
+										.cell-md-6.cell-sm-6.cell-xs-12
+											.post-address
+												.post-address-content
+													h4: a(href="#") Videographer
+													.group-md
+														span.post-panel
+															span.material-icons-location_on
+															span Chicago
+
+														span.post-panel
+															span.material-icons-av_timer
+															span Full Time
+
+														span.post-panel
+															span.mdi.mdi-clock
+															span 6 hours ago
+
+
+										.cell-md-6.cell-sm-6.cell-xs-12
+											.post-address
+												.post-address-content
+													h4: a(href="#") Content Editor
+													.group-md
+														span.post-panel
+															span.material-icons-location_on
+															span Chicago
+
+														span.post-panel
+															span.material-icons-av_timer
+															span Full Time
+
+														span.post-panel
+															span.mdi.mdi-clock
+															span 6 hours ago
+
+
+
+				.cell-lg-3.cell-xs-12
+					.range.range-50.range-lg-90.range-sm-bottom.range-center.post-sidebar
+						.cell-lg-12.cell-md-6.cell-sm-6.text-center
+							.post-sidebar-form-2.bg-sidebar-form-1.bg-image.sidebar-border
+								.post-sidebar-form-content
+									h3 Looking for work?
+									.decor-center-small.bg-secondary-light
+									p Enter your e-mail below and get our weekly career newsletter.
+								// RD Mailform
+								form.rd-mailform.rd-mailform-lg(data-form-output="form-output-global", data-form-type='subscribe', method='post', action='bat/rd-mailform.php')
+									.form-wrap
+										input#subscribe-email.form-input.form-input-lg(type="email" name="email" data-constraints="@Email @Required")
+										label.form-label(for="subscribe-email") E-mail
+									button(type="submit").button.button-lg.btn-anis.button-secondary-light Subscribe
+
+						.cell-lg-12.cell-md-6.cell-sm-6.text-left
+							p.sidebar-category Latest Posts
+							include ../sections/_sidebar-post
+
+
+	// Page Footer
+	include ../sections/_footer-var-2

@@ -1,0 +1,48 @@
+mixin panel-top-switch-filters(obj)
+	.panel-top-switch-filters
+		.isotope-filters.isotope-filters-horizontal.tabs-custom.tabs-horizontal.tabs-corporate
+			ul.nav.nav-custom.nav-tabs
+				li
+					a.active(data-isotope-filter='*', data-isotope-group='gallery', href='#') All
+				li
+					a(data-isotope-filter='Type 1', data-isotope-group='gallery', href='#') Hair
+				li
+					a(data-isotope-filter='Type 2', data-isotope-group='gallery', href='#') Makeup
+				li
+					a(data-isotope-filter='Type 3', data-isotope-group='gallery', href='#') Nails
+				li
+					a(data-isotope-filter='Type 4', data-isotope-group='gallery', href='#') fashion
+
+		.switch-box.switch-box-inset
+			span.switch-text View:
+			span.switch-item
+				a(href="beauty-list.html" class=obj.listActive).switch-list
+					svg(x='0px', y='0px', width='14px', height='13px', viewbox='0 0 14 13', enable-background='new 0 0 14 13')
+						g
+							rect(fill='#ccc', width='3', height='3')
+						g
+							rect(y='5', fill='#ccc', width='3', height='3')
+						g
+							rect(y='10', fill='#ccc', width='3', height='3')
+						g
+							rect(x='5', y='1', fill='#ccc', width='9', height='1')
+						g
+							rect(x='5', y='11', fill='#ccc', width='9', height='1')
+						g
+							rect(x='5', y='6', fill='#ccc', width='9', height='1')
+
+
+				a(href="beauty.html" class=obj.columnActive).switch-column
+					svg(x='0px', y='0px', width='16px', height='10px', viewbox='0 0 16 10', enable-background='new 0 0 16 10')
+						g
+							rect(x='0', fill='#ccc', width='4', height='4')
+						g
+							rect(x='6', fill='#ccc', width='4', height='4')
+						g
+							rect(x='12', fill='#ccc', width='4', height='4')
+						g
+							rect(x='0', y='6', fill='#ccc', width='4', height='4')
+						g
+							rect(x='6', y='6', fill='#ccc', width='4', height='4')
+						g
+							rect(x='12', y='6', fill='#ccc', width='4', height='4')

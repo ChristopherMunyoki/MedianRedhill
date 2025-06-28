@@ -1,0 +1,147 @@
+extends  ../_skeleton
+
+//- Includes
+
+block variables
+	- var activeIndex = 5
+	- var pageName = 'Single Product'
+	- var pageClass = ''
+
+block title
+	title=pageName
+
+block page
+	// Page Header
+	+navbar-default({})
+
+	+page-title({
+		title: pageName,
+		imageName: 'breadcrumbs-shop',
+		path: [['Additional Pages', '#'], [pageName]]
+	})
+
+	section.section-md.bg-white
+		.shell
+			.range.range-center
+				.cell-lg-10.cell-md-12.cell-sm-10
+					.unit.unit-spacing-lg.unit-md-horizontal
+						.unit__left
+							.slick-horizontal.slick-vertical
+								// Slick Carousel
+								.slick-slider.carousel-parent(data-arrows="false", data-loop="false", data-dots="false", data-swipe="true", data-items="1" data-child="#child-carousel", data-for="#child-carousel")
+									.item
+										+jpg('product-10-421x388')
+									.item
+										+jpg('product-11-421x388')
+									.item
+										+jpg('product-12-421x388')
+									.item
+										+jpg('product-13-421x388')
+
+								.slick-slider#child-carousel(data-for=".carousel-parent", data-arrows="true",
+								data-loop="false", data-dots="false", data-swipe="false",
+								data-items="2", data-xs-items="3", data-sm-items="4",
+								data-md-items="4", data-lg-items="4", data-slide-to-scroll="1" data-md-vertical='true')
+									.item
+										.slick-slide-overlay
+											+jpg('product-mini-10-92x91')
+									.item
+										.slick-slide-overlay
+											+jpg('product-mini-11-92x91')
+									.item
+										.slick-slide-overlay
+											+jpg('product-mini-12-92x91')
+									.item
+										.slick-slide-overlay
+											+jpg('product-mini-13-92x91')
+
+						.unit__body
+							.product-description
+								h4 iStep Fitness Tracker
+								.product-rating
+									span.icon.icon-gray-2.fa-star
+									span.icon.icon-gray-2.fa-star
+									span.icon.icon-gray-2.fa-star
+									span.icon.icon-gray-2.fa-star
+									span.icon.icon-gray-2.fa-star-o
+
+								.box-product-price
+									span.price $40.00
+
+								.tabs-custom-wrap.product-tabs
+									// Bootstrap tabs
+									#tabs-1.tabs-custom.tabs-horizontal.tabs-modern
+										// Nav tabs
+										ul.nav-custom.nav-custom-tabs
+											li.active: a(href='#tabs-1-1' data-toggle='tab') Shipping
+											li: a(href='#tabs-1-2' data-toggle='tab') Description
+
+										//- Tab panes
+										.tab-content.text-left
+											div#tabs-1-1.tab-pane.fade.in.active
+												p To select a desired shipment & delivery method, please add this product to cart and follow the steps on the next page. You can contact our administrators and ask a question about the product delviery cycle.
+
+											div#tabs-1-2.tab-pane.fade
+												p This fitness tracker not only counts steps, calories, floors climbed and intensity minutes, it uses GPS satellites to track how far and how fast you go during almost any activity.
+
+
+								.product-description-item.group-lg
+									.product-description__wrap
+										span.group-md
+											span Color:
+											span.product-description__color
+												a(href="#").color-one.active
+												a(href="#").color-two
+
+									.product-description__wrap
+										span.stepper-var-1.product-number.group-md
+											span Quantity:
+											input.form-input(type="number" data-zeros="true" value="1" min="1" max="1000")
+
+								a(href="cart-page.html").button.button-effect-ujarak.button-gray-dark Add to cart
+
+	='\n'
+
+	section.section-md.bg-white
+		.shell
+			.range.range-center
+				.cell-lg-10
+					.text-center
+						p.title-decor-bottom 2 reviews
+					.box-reviews
+						.group-sm
+							p.reviews-autor-name Edward
+							span.product-rating
+								span.icon.icon-gray-2.fa-star
+								span.icon.icon-gray-2.fa-star
+								span.icon.icon-gray-2.fa-star
+								span.icon.icon-gray-2.fa-star-o
+								span.icon.icon-gray-2.fa-star-o
+
+						p For months I had been researching activity trackers that were also fairly decent in tracking heart rate and sleep, and could fit my small wrist. I've had the HR+ for almost two weeks now, and I love this thing! A lot of the features are already described in the specs, in the manual, and in other reviews, so I'll just add that this fitness tracker is really worth the money I paid. I recommend it to everyone who is looking for a high quality fitness activity monitoring.
+
+					.box-reviews
+						.group-sm
+							p.reviews-autor-name Nina
+							span.product-rating
+								span.icon.icon-gray-2.fa-star
+								span.icon.icon-gray-2.fa-star
+								span.icon.icon-gray-2.fa-star
+								span.icon.icon-gray-2.fa-star-o
+								span.icon.icon-gray-2.fa-star-o
+
+						p This item was ordered for my husband. He likes to run at lunch, and the GPS function of this tracker sealed the deal. The GPS seems to work just like any other device we have, we were concerned being it is in such a small watch there would be some compromise. The device is more or less waterproof, it can be left on while showering or swimming. Also, the delivery was really quick and secure, and if you want to buy a fitness tracker, I recommend to do it here.
+
+	='\n'
+
+	section.section-md.bg-white
+		.shell
+			.range.range-center
+				.cell-lg-10
+					.text-center
+						p.title-decor-bottom Related Products
+					.range.range-30.range-center.range-sm-left
+						include ../sections/_box-poduct
+
+	// Page Footer
+	include ../sections/_footer-var-2

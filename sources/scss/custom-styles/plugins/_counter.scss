@@ -1,0 +1,33 @@
+/*
+*
+* Counter
+* --------------------------------------------------
+*/
+
+
+.counter {
+
+  &__subtitle{}
+
+  &-wrap{}
+}
+
+.counter + .box-counter-title { margin-top: 18px; }
+
+.counter-k {
+  &:after {
+   content: 'k';
+  }
+}
+
+.counter-percent {
+  &:after {
+    content: '%';
+  }
+}
+
+.counter-plus {
+  &:after {
+    content: '+';
+  }
+}

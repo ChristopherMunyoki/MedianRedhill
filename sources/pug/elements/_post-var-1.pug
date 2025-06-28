@@ -1,0 +1,24 @@
+mixin post-var-1(obj)
+	.post(class=obj.postClass)
+		.unit.unit-spacing-0(class=obj.unitClass)
+			.unit__left
+				a(href="single-post.html"): +jpg(obj.imgName)
+
+			.unit__body
+				.post-content
+					.post-content-wrap
+						.post-tags-wrap
+							a.post-tags(href="#" class=obj.classTags)=obj.postTags1
+							span ,
+							=" "
+							a.post-tags(href="#" class=obj.classTags)=obj.postTags2
+						h5: a(href="single-post.html")=obj.postTitle
+						p=obj.postText
+						.post-panel-between
+							span.post-panel
+								span.mdi.mdi-sm.mdi-clock
+								time(datetime=obj.dateTime)=obj.postTime
+
+							span.post-panel
+								span.fl-justicons-visible6
+								span=obj.postViews

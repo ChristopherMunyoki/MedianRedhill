@@ -1,0 +1,106 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_post-var-3
+include ../elements/_ui-insta-thumb-big
+include ../elements/_panel-top-switch-filters
+
+block variables
+	- var activeIndex = 4
+	- var pageName = 'Beauty List'
+	- var pageClass = ''
+
+block title
+	title=pageName
+
+block page
+	// Page Header
+	+navbar-default({})
+
+
+	+page-title({
+		title: 'Beauty',
+		imageName: 'breadcrumbs-beauty',
+		path: [['Beauty']]
+	})
+
+	section.section-md.bg-white.text-center
+		.shell.shell-fluid-var-4
+			.range.range-50.range-xlg-0.range-lg-justify
+				.cell-lg-9.cell-xs-12.cell-lg-container.isotope-wrap
+					.row.isotope-wrap
+						// Isotope Filters
+						.col-lg-12
+							+panel-top-switch-filters({
+								listActive: 'active'
+							})
+
+						.col-lg-12
+
+							.row.isotope(data-isotope-layout='fitRows', data-isotope-group='gallery')
+								.col-md-12.col-sm-6.col-top-50.isotope-item(data-filter='Type 2')
+									+post-var-3({
+										imgName: "beauty-6-559x433",
+										postClass: 'post-var-3 post-var-3__gray post-custom-2',
+										unitClass: "unit-md-horizontal",
+										postTags1: "Beauty",
+										postTags2: "Makeup",
+										postTitle: "8 Makeup Tips Every Woman Should Know",
+										postText: "Some makeup techniques may seem hard to follow, but they show great results and are often considered complex by beginners in makeup. Today we would like to unveil...",
+										dateTime: "2017-01-03",
+										postTime: "january 3, 2017",
+										postViews: "898",
+									})
+
+								.col-md-12.col-sm-6.col-top-50.isotope-item(data-filter='Type 1')
+									+post-var-3({
+										imgName: "beauty-7-559x433",
+										postClass: 'post-var-3 post-var-3__gray post-custom-2',
+										unitClass: "unit-md-horizontal unit-md--inverse",
+										postTags1: "Lifestyle",
+										postTags2: "Health",
+										postTitle: "Lipstick Tricks You Probably Don’t Know About",
+										postText: "You don’t have to be a makeup genius to know that lipstick can take your face from dull to dramatic in seconds. These simple tricks to help you make the most of your lipstick...",
+										dateTime: "2017-03-12",
+										postTime: "march 12, 2017",
+										postViews: "898",
+									})
+
+								.col-md-12.col-sm-6.col-top-50.isotope-item(data-filter='Type 4')
+									+post-var-3({
+										imgName: "beauty-8-559x433",
+										postClass: 'post-var-3 post-var-3__gray post-custom-2',
+										unitClass: "unit-md-horizontal",
+										classTags: 'one-tags',
+										postTags1: "Video",
+										postTitle: "Ashley Graham’s Guide to Choosing the Perfect Lipstick",
+										postText: "With its endless palette of lipsticks, glosses, and stains, the makeup counter can be pretty overwhelming. This article will teach you how to choose the right lip color...",
+										dateTime: "2017-01-31",
+										postTime: "january 31, 2017",
+										postViews: "898",
+									})
+
+								.col-md-12.col-sm-6.col-top-50.isotope-item(data-filter='Type 3')
+									+post-var-3({
+										imgName: "beauty-9-559x433",
+										postClass: 'post-var-3 post-var-3__gray post-custom-2',
+										unitClass: "unit-md-horizontal unit-md--inverse",
+										classTags: 'one-tags post-tags-custom',
+										postTags1: "Must read",
+										postTitle: "How to Choose a Proper Leather Handbag",
+										postText: "A Leather Handbag is an accessory that will often come in handy. A quality leather handbag should last you years. Whether you choose a timeless black or brown leather...",
+										dateTime: "2017-02-05",
+										postTime: "February 5, 2017",
+										postViews: "898",
+									})
+
+						.col-xs-12.offset-top-50
+							a(href="#").button.button-lg.button-width-220.btn-anis.button-gray-1 More
+
+				.cell-lg-3.cell-xs-12
+					include ../sections/_sidebar-long
+
+	='\n'
+
+	// Page Footer
+	include ../sections/_footer-var-2

@@ -1,0 +1,14 @@
+mixin page-title(obj)
+  - var activeMenuItem = obj.path.pop()[0];
+
+  // Breadcrumbs & Page title
+  section.page-title(class=obj.imageName)
+    .page-title-text=obj.title
+    ul.breadcrumbs-custom
+      li: a(href='index.html') Home
+
+      - for (var i = 0; i < obj.path.length; i++)
+        li: a(href=obj.path[i][1])=obj.path[i][0]
+
+      li.active=activeMenuItem
+  ='\n'

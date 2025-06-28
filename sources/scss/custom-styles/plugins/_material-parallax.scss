@@ -1,0 +1,50 @@
+/*
+*
+* Material Parallax
+* --------------------------------------------------
+*/
+
+.parallax-container {
+  position: relative;
+  overflow: hidden;
+  margin-left: -1px;
+}
+
+.material-parallax {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  background-position: center center;
+}
+
+.ipad, .iphone {
+  .material-parallax {
+    background-attachment: scroll !important;
+  }
+}
+
+.material-parallax img {
+  display: none;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate3d(0, 0, 0);
+  transform: translateX(-50%);
+}
+
+@supports(object-fit: cover) {
+  .material-parallax img {
+    object-fit: cover;
+    object-position: center center;
+  }
+}
+
+.parallax-content {
+  position: relative;
+  z-index: 1;
+}

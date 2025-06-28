@@ -1,0 +1,63 @@
+/*
+* Navbar Default
+*/
+
+.rd-navbar-default {
+
+
+  .rd-navbar-static,
+  .rd-navbar-fullwidth {
+
+    .rd-navbar-inner {
+      @include display-flex();
+      @include align-items(center);
+      @include justify-content(space-between);
+    }
+
+    &.rd-navbar--is-stuck,
+    &.rd-navbar--is-clone{
+
+      .rd-navbar-inner{
+        padding-top: 8px;
+        padding-bottom: 8px;
+      }
+
+      .rd-navbar-dropdown {
+        top: 12px
+      }
+
+      .rd-navbar-megamenu {
+        top: 45px
+      }
+    }
+  }
+
+  .rd-navbar-fullwidth {
+
+    .rd-navbar-panel {
+      display: block;
+    }
+
+    .rd-navbar-aside-right {
+      margin-top: 0;
+    }
+  }
+
+  .list-inline {
+
+    .fa-facebook,
+    .fa-instagram {
+      font-size: 22.65px;
+      line-height: 32px;
+    }
+
+    .fa-twitter {
+      font-size: 26px;
+      line-height: 32px;
+    }
+  }
+
+  .rd-navbar-aside-social {
+    @include display-flex();
+  }
+}

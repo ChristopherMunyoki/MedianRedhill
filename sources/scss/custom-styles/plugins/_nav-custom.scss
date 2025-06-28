@@ -1,0 +1,467 @@
+//
+// Nav custom
+// --------------------------------------------------
+
+// Tabs
+//--------------------------------------
+// Corporate style
+$tabs-corporate-color: $gray-darker;
+$tabs-corporate-background: transparent;
+$tabs-corporate-active-color: $white;
+$tabs-corporate-active-background: $primary;
+$tabs-corporate-border: #ebebeb;
+
+// Modern tabs
+$tabs-modern-color: inherit;
+$tabs-modern-font: 400 13px/24px $font-family-sec;
+$tabs-modern-border-color: $gray-light;
+
+$tabs-modern-active-color: $gray-darker;
+$tabs-modern-active-background: transparent;
+$tabs-modern-active-line: $primary;
+
+// Base styles
+.tabs-custom {
+  text-align: left;
+
+  .nav-custom {
+    &> li, &> li > a {
+      display: block;
+      position: relative;
+    }
+  }
+
+  .nav-custom-tabs {
+
+    li {
+
+      &+ li {
+
+        @media (min-width: $screen-sm-min) {
+          margin-left: 9px;
+        }
+      }
+    }
+  }
+
+  .nav-tabs {
+    font-size: 0;
+    line-height: 0;
+    word-spacing: 0;
+    border: 0;
+
+    &:before,
+    &:after {
+      display: none;
+    }
+
+    li {
+      float: none;
+      border: 0;
+      cursor: pointer;
+      transition: .33s all ease;
+      
+      @media (min-width: $screen-xs-min) {
+        display: inline-block;
+      }
+    }
+
+    li.active {
+      cursor: default;
+    }
+
+    a {
+      margin: 0;
+      border-radius: 0;
+    }
+  }
+}
+
+.page .tabs-custom.tabs-centered {
+  .nav-tabs,
+  .tab-content {
+    text-align: center;
+  }
+}
+
+// Offsets
+* + .tabs-horizontal.tabs-corporate {
+  margin-top: 25px;
+}
+
+* + .tabs-vertical.tabs-corporate {
+  margin-top: 25px;
+
+  @media (min-width: $screen-sm-min) {
+    margin-top: 40px;
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  * + .tabs-vertical.tabs-corporate {
+    margin-top: 60px;
+  }
+}
+
+@media (min-width: $screen-lg-min) {
+  * + .tabs-vertical.tabs-corporate {
+    margin-top: 60px;
+  }
+}
+
+// Modern tabs
+
+.tabs-modern {
+
+  .nav-custom-tabs {
+    text-align: left;
+
+    li a {
+      display: inline-block;
+      width: 100%;
+      border: 0;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      font-family: $tabs-modern-font;
+      color: $tabs-modern-color;
+      background: transparent;
+
+      &:before {
+        position: absolute;
+        content: '';
+        right: 100%;
+        bottom: -4px;
+        left: 0;
+        height: 4px;
+        background: $tabs-modern-active-line;
+        transition: 300ms all;
+      }
+    }
+
+    li a:hover,
+    li.active a {
+      color: $tabs-modern-active-color;
+    }
+  }
+
+  * + .tab-content {
+    margin-top: 20px;
+  }
+
+  &.tabs-horizontal {
+    .nav-custom-tabs {
+      position: relative;
+      @include justify-content(flex-start);
+      @include display-flex;
+
+      border-bottom: 4px solid #f2f3f8;
+
+      li + li {
+        margin-left: 45px;
+
+        @media (min-width: $screen-sm-min) {
+          margin-left: 59px;
+        }
+      }
+
+      li a {
+        padding: 13px 0;
+        width: auto;
+      }
+
+      li a:hover,
+      li.active a {
+
+        &:before {
+          right: 0;
+        }
+      }
+    }
+  }
+
+  &.tabs-vertical {
+    @media (min-width: $screen-sm-min) {
+      .nav-custom-tabs {
+        text-align: right;
+        border-right: 1px solid #f2f2f2;
+
+        li a {
+          padding: 0 30px 0 0;
+          width: auto;
+          border-right: 1px solid transparent;
+          border-bottom: none;
+          margin-right: -1px;
+        }
+
+        li a:hover,
+        li.active a {
+          border-right: 1px solid;
+        }
+
+        li + li { margin-top: 15px; }
+      }
+
+      .tab-content { padding: 0 0 0 48px; }
+    }
+  }
+
+  @media (min-width: $screen-lg-min) {
+    .nav-custom-tabs { min-width: 100px; }
+  }
+
+  @media (min-width: $screen-xl-min) {
+    .nav-custom-tabs { min-width: 215px; }
+  }
+}
+
+// Tabs corporate style
+.tabs-corporate {
+  .nav-tabs {
+    position: relative;
+    border: 1px solid $tabs-corporate-border;
+
+    li {
+      margin: -1px;
+    }
+
+    li a {
+      padding: 7px 10px;
+      text-transform: uppercase;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 1.4;
+      letter-spacing: .1em;
+      font-family: $font-family-sec;
+      color: $tabs-corporate-color;
+      background: $tabs-corporate-background;
+      text-align: center;
+      vertical-align: middle;
+
+      @media (min-width: $screen-xs-min) {
+        padding: 14px 16px;
+      }
+
+      &:first-child {
+        border-top: 1px solid $tabs-corporate-border;
+      }
+    }
+
+    a.active,
+    li a:hover,
+    li.active a {
+      color: $tabs-corporate-active-color;
+      background: $tabs-corporate-active-background;
+    }
+  }
+
+  .tab-content {
+    padding: 30px 0 0;
+  }
+}
+
+.tabs-modern-item {
+  background: $gray-lighter;
+}
+
+.tabs-modern-item__image {
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: $screen-xxs-max) {
+  .tabs-custom {
+    .nav-tabs {
+      max-width: 320px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+@media (max-width: $screen-xs-max) {
+
+}
+
+@media (min-width: $screen-sm-min) {
+  // Horizontal tabs
+  // ----------------------
+  .tabs-horizontal {
+    padding-left: 30px;
+    padding-right: 30px;
+
+    &.tabs-corporate {
+      .nav-tabs {
+        position: relative;
+        width: 100%;
+        display: block;
+        @include justify-content(center);
+        text-align: left;
+        border: 0;
+        will-change: transform;
+        border: 1px solid $tabs-corporate-border;
+
+        li {
+          display: inline-block;
+          will-change: transform;
+          @include flex-grow(1);
+          @include flex-shrink(0);
+
+          a {
+            display: block;
+            position: relative;
+            z-index: 1;
+            padding: 21px 20px;
+            border: none;
+
+            &,
+            &::before {
+              transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+            }
+
+            &::before {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: -1px;
+              width: calc(100% + 2px);
+              height: 100%;
+              z-index: -1;
+              opacity: 0;
+              transform: scale3d(0.7, 1, 1);
+              transition: transform 0.4s, opacity 0.4s;
+              transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+              background: $tabs-corporate-active-background;
+            }
+          }
+
+          a.active,
+          &.active a,
+          a:hover {
+            color: $tabs-corporate-active-color;
+            border-color: $tabs-corporate-active-background;
+            background-color: transparent;
+
+            &::before {
+              opacity: 1;
+              transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Vertical tabs
+  // ----------------------
+  .tabs-vertical {
+    @include display-flex;
+    @include flex-direction(row);
+    @include flex-wrap(nowrap);
+    @include align-items(flex-start);
+
+    .nav-tabs {
+      @include display-flex;
+      @include flex-direction(column);
+      @include flex-wrap(nowrap);
+      @include align-items(stretch);
+      @include flex-shrink(0);
+      max-width: 50%;
+
+      li {
+        border: 0;
+        width: 100%;
+        text-align: left;
+
+        a {
+          font-size: 14px;
+          color: $gray-light;
+          border: none;
+        }
+      }
+
+      li.active a,
+      a:hover {
+        box-shadow: 0 9px 21px 0 rgba(#1e1e1e, .13);
+      }
+    }
+
+    .tab-content {
+      @include flex-grow(1);
+    }
+
+    // Tabs corporate
+    &.tabs-corporate {
+      .nav-tabs {
+        width: auto;
+        min-width: 260px;
+        border: 0;
+
+        li {
+          margin: 0;
+        }
+
+        li a {
+          position: relative;
+          padding: 15px 30px;
+
+          border: 0;
+          overflow: hidden;
+          text-align: left;
+        }
+
+        > li + li {
+          margin-top: 2px;
+        }
+      }
+
+      .tab-content {
+        padding: 0 0 0 30px;
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-md-min) {
+  // Horizontal tabs
+  // ----------------------
+  .tabs-horizontal {
+
+    // Tabs corporate
+    &.tabs-corporate {
+      .tab-content {
+        padding-top: 60px;
+      }
+    }
+  }
+
+  // Vertical tabs
+  // ----------------------
+  .tabs-vertical {
+
+    // Tabs corporate
+    &.tabs-corporate {
+      .tab-content {
+        padding: 10px 0 0 45px;
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-lg-min) {
+  // Horizontal tabs
+  // ----------------------
+  .tabs-horizontal {
+    &.tabs-modern {
+    }
+  }
+}
+
+.tabs-custom-wrap {
+
+  .tabs-horizontal {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

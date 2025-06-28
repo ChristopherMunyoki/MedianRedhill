@@ -1,0 +1,29 @@
+extends  ../_skeleton
+
+block variables
+	- var activeIndex = 5
+	- var pageName = 'Maintenance'
+	- var pageClass = ''
+
+block title
+	title=pageName
+
+block page
+	// Page Header
+	+navbar-default({})
+
+	section.page-title.breadcrumbs-maintenance.page-title-lg-inset
+		h1.text-white=pageName
+
+	section.section-md.bg-white.text-center
+		.shell
+			.range.range-center
+				.cell-lg-9.cell-md-10
+					h5.text-regular.text-gray-light We are currently working on
+					h2.text-regular.spacing-0 This page will appear in
+					.countdown-wrap.block-centered
+						// TimeCircles
+						.DateCountdown(data-date='2017-11-10 00:00:00' data-circle-bg='#f5f5f5' data-circle-inner-color='#aa6ecf')
+
+	// Page Footer
+	include ../sections/_footer-var-2

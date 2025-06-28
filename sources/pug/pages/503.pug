@@ -1,0 +1,31 @@
+extends  ../_skeleton
+
+block variables
+	- var activeIndex = 5
+	- var pageName = '503'
+	- var pageClass = 'vertical-justify'
+
+block title
+	title=pageName
+
+block page
+	// Page Header
+	+navbar-default({})
+
+	section.page-title.breadcrumbs-503.page-title-lg-inset
+		h1.text-white=pageName
+
+	section.section-md.bg-white.text-center.section-grow
+		.shell
+			.range.range-center
+				.cell-lg-9.cell-md-10
+					h2.text-regular.spacing-0.text-width-500 Service is temporary unavailable
+					h5.text-regular.text-gray-light Unfortunately, the website is not available now. Please visit us later.
+
+					.button-group
+						a(href="./").button.button-lg.button-effect-ujarak.button-gray-dark Go to home page
+						span.spacing-50 or
+						a(href="contacts.html").button.button-lg.button-effect-ujarak.button-secondary-dark Contact us
+
+	// Page Footer
+	include ../sections/_footer-var-2

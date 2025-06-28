@@ -1,0 +1,156 @@
+extends  ../_skeleton
+
+//- Includes
+
+block variables
+	- var activeIndex = 5
+	- var pageName = 'Forms'
+
+block title
+	title=pageName
+
+block page
+	+navbar-default({})
+
+	+page-title({
+		title: pageName,
+		imageName: 'breadcrumbs-typography',
+		path: [['Additional Pages', '#'], [pageName]]
+	})
+
+	// Forms
+	section.section-md.bg-white.text-center
+		.shell
+			.range.range-sm-center.range-50
+				.cell-xs-12
+					h3=pageName
+					p.big.text-width-medium With forms you can get almost any kind of information from your visitors, who will definitely appreciate this attractive element.
+
+				.cell-sm-9.cell-md-7.cell-lg-6
+					.inset-sm-25
+						p.large.text-gray-darker Login form
+						.group-sm.group-sm-justify
+							a.button.button-facebook.button-rounded.button-icon.button-icon-left(href='#')
+								span.icon.fa.fa-facebook
+								| Facebook
+							a.button.button-twitter.button-rounded.button-icon.button-icon-left(href='#')
+								span.icon.fa.fa-twitter
+								| Twitter
+							a.button.button-google.button-rounded.button-icon.button-icon-left(href='#')
+								span.icon.fa.fa-google-plus
+								| Google+
+						.text-decoration-lines
+							span.text-decoration-lines-content or
+
+						// RD Mailform
+						form.rd-mailform.form-label-centered
+							.form-wrap
+								label.form-label-outside(for="login-email") E-mail
+								input#login-email.form-input(type="email" name="email" data-constraints="@Email @Required")
+
+							.form-wrap
+								label.form-label-outside(for="login-password") Password
+								input#login-password.form-input(type="password" name="pass" data-constraints="@Required")
+
+							button(type="submit").button.button-primary.button-effect-ujarak.button-block Sign in
+	='\n'
+
+	hr
+
+	// Contact Us
+	section.section-md.last-section.bg-white.text-center
+		.shell
+			.range.range-sm-center
+				.cell-sm-10.cell-md-10.cell-lg-6
+					p.large.text-gray-darker Contact Us
+					// RD Mailform
+					form.rd-mailform(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+						.range.range-sm-bottom.range-spacing-20.range-20
+							.cell-sm-6
+								.form-wrap
+									input#contact-first-name.form-input(type="text" name="name" data-constraints='@Required')
+									label.form-label(for="contact-first-name") Your name
+
+							.cell-sm-6
+								.form-wrap
+									input#contact-phone.form-input(type="text" name="phone" data-constraints='@Numeric')
+									label.form-label(for="contact-phone") Phone
+
+							.cell-xs-12
+								.form-wrap
+									textarea#contact-message.form-input(name="message" data-constraints="@Required")
+									label.form-label(for="contact-message") Your Message
+
+							.cell-sm-6
+								.form-wrap
+									input#contact-email.form-input(type="email" name="email" data-constraints="@Email @Required")
+									label.form-label(for="contact-email") E-mail
+
+							.cell-sm-6
+								button(type="submit").button.button-primary.button-effect-ujarak.button-block send message
+	='\n'
+
+	// Contact Form with reCAPTCHA
+	section.section-md.last-section.bg-white.text-center
+		.shell
+			.range.range-sm-center
+				.cell-sm-10.cell-md-10.cell-lg-6
+					p.large.text-gray-darker Contact Form with reCAPTCHA
+					// RD Mailform
+					form.rd-mailform(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+						.range.range-sm-bottom.range-spacing-20.range-20
+							.cell-sm-6
+								.form-wrap
+									input#contact-first-name-2.form-input(type="text" name="name" data-constraints='@Required')
+									label.form-label(for="contact-first-name-2") Your name
+
+							.cell-sm-6
+								.form-wrap
+									input#contact-phone-2.form-input(type="text" name="phone" data-constraints='@Numeric')
+									label.form-label(for="contact-phone-2") Phone
+
+							.cell-xs-12
+								.form-wrap
+									textarea#contact-message-2.form-input(name="message" data-constraints="@Required")
+									label.form-label(for="contact-message-2") Your Message
+
+							.cell-sm-12
+								.form-wrap
+									input#contact-email-2.form-input(type="email" name="email" data-constraints="@Email @Required")
+									label.form-label(for="contact-email-2") E-mail
+
+							.cell-md-6
+								//Google captcha
+								.form-wrap.form-validation-right.form-wrap-inline
+									.recaptcha#captcha1(data-sitekey="6LfZlSETAAAAAC5VW4R4tQP8Am_to4bM3dddxkEt")
+
+							.cell-sm-6
+								button(type="submit").button.button-primary.button-effect-ujarak.button-block send message
+
+		='\n'
+
+	// Let’s Stay in Touch!
+	section.section-md.section-inset-horizontal-160.text-center
+		.parallax-container
+			.material-parallax.parallax
+				+jpg('bg-forms-1600x1000')
+			.parallax-content.section-md.context-dark
+				.shell
+					.range.range-50.range-sm-center.range-md-middle
+						.cell-xs-12
+							h3 Join Our Newsletter
+							p.spacing-50.text-width-500 Subscribe to our newsletter and receive the latest top-rated lifestyle, beauty and health articles to your inbox. We don’t spam!
+
+						.cell-sm-10.cell-md-8.cell-lg-7
+							// RD Mailform
+							form.rd-mailform.form-inline.form-white-outline(data-form-output="form-output-global", data-form-type='subscribe', method='post', action='bat/rd-mailform.php')
+								.form-wrap
+									input#subscribe-email.form-input(type="email" name="email" data-constraints="@Email @Required")
+									label.form-label(for="subscribe-email") E-mail
+								button(type="submit").button.button-white-1.button-effect-ujarak Subscribe
+	='\n'
+
+
+	// Page Footer
+	include ../sections/_footer-var-2
+

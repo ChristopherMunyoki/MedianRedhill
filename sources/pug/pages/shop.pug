@@ -1,0 +1,171 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_panel-top-switch-sort
+
+block variables
+	- var activeIndex = 5
+	- var pageName = 'Shop'
+	- var pageClass = ''
+
+block title
+	title=pageName
+
+block page
+	// Page Header
+	+navbar-default({})
+
+	+page-title({
+		title: pageName,
+		imageName: 'breadcrumbs-shop',
+		path: [['Additional Pages', '#'], [pageName]]
+	})
+
+	section.section-md.bg-white
+		.shell.shell-custom
+			.range.range-50.range-lg-justify
+				.cell-md-3.cell-xs-12.cell-lg-container-2
+					.range.range-60
+						.cell-md-12.cell-sm-4
+							h5.title-decor-bottom.text-regular Categories
+							.sidebar-shop-filter
+
+								ul.list.list-shop-filter.checkbox-inline
+									li
+										label
+											input(name="input-group-radio", value="checkbox-1", type="checkbox")
+											| Fitness Devices
+											=" "
+											span (8)
+
+									li
+										label
+											input(name="input-group-radio", value="checkbox-2", type="checkbox")
+											| Home Gym
+											=" "
+											span (6)
+
+									li
+										label
+											input(name="input-group-radio", value="checkbox-3", type="checkbox")
+											| Health & Beauty
+											=" "
+											span (4)
+
+									li
+										label
+											input(name="input-group-radio", value="checkbox-4", type="checkbox")
+											| Sports & Activities
+											=" "
+											span (7)
+
+						.cell-md-12.cell-sm-4
+							h5.title-decor-bottom.text-regular Price
+							.sidebar-shop-filter
+
+								ul.list.list-shop-filter.checkbox-inline
+									li
+										label
+											input(name="input-group-radio", value="checkbox-1", type="checkbox")
+											| Under $10
+											=" "
+											span (8)
+
+									li
+										label
+											input(name="input-group-radio", value="checkbox-2", type="checkbox")
+											| $10 - $20
+											=" "
+											span (6)
+
+									li
+										label
+											input(name="input-group-radio", value="checkbox-3", type="checkbox")
+											| $20 - $40
+											=" "
+											span (4)
+
+									li
+										label
+											input(name="input-group-radio", value="checkbox-4", type="checkbox")
+											| $40 - $60
+											=" "
+											span (7)
+
+						.cell-md-12.cell-sm-4
+							h5.title-decor-bottom.text-regular Brands
+							.sidebar-shop-filter
+
+								ul.list.list-shop-filter.checkbox-inline
+									li
+										label
+											input(name="input-group-radio", value="checkbox-1", type="checkbox")
+											| All Brands
+											=" "
+											span (8)
+
+									li
+										label
+											input(name="input-group-radio", value="checkbox-2", type="checkbox")
+											| Nike
+											=" "
+											span (6)
+
+									li
+										label
+											input(name="input-group-radio", value="checkbox-3", type="checkbox")
+											| Reebok
+											=" "
+											span (4)
+
+									li
+										label
+											input(name="input-group-radio", value="checkbox-4", type="checkbox")
+											| New Balance
+											=" "
+											span (7)
+
+				.cell-md-9.cell-xs-12.cell-lg-container-3
+					+panel-top-switch-sort({
+						columnActive: 'active'
+					})
+
+					.range.range-30.range-center
+						include ../sections/_box-poduct
+
+						.cell-md-4.cell-sm-6.cell-xs-10
+							.box-product
+								a(href="single-product.html"): +png('product-4-240x235')
+								h5: a(href="single-product.html") Elite Wheel Roller
+								span.price $70.00
+								.box-product-details
+									a(href="cart-page.html").box-product-basket.mdi.mdi-cart-outline
+									a(href="#").box-product-view.fl-justicons-visible6
+
+						.cell-md-4.cell-sm-6.cell-xs-10
+							.box-product
+								a(href="single-product.html"): +png('product-5-240x235')
+								h5: a(href="single-product.html") Sports Bag
+								span.price-before-sale $56.00
+								span.price $24.00
+								.box-product-details
+									a(href="cart-page.html").box-product-basket.mdi.mdi-cart-outline
+									a(href="#").box-product-view.fl-justicons-visible6
+
+						.cell-md-4.cell-sm-6.cell-xs-10
+							.box-product
+								a(href="single-product.html"): +png('product-6-240x235')
+								h5: a(href="single-product.html") New Balance Sneakers
+								span.price $14.00
+								.box-product-details
+									a(href="cart-page.html").box-product-basket.mdi.mdi-cart-outline
+									a(href="#").box-product-view.fl-justicons-visible6
+
+					+pagination(['text-center'])
+
+
+	='\n'
+
+
+	// Page Footer
+	include ../sections/_footer-var-2

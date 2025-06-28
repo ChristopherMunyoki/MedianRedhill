@@ -1,0 +1,44 @@
+mixin panel-top-switch-sort(obj)
+	.panel-top-switch-sort
+		.switch-box
+			span.switch-text View:
+			span.switch-item
+				a(href="shop-list.html" class=obj.listActive).switch-list
+					svg(x='0px', y='0px', width='14px', height='13px', viewbox='0 0 14 13', enable-background='new 0 0 14 13')
+						g
+							rect(fill='#ccc', width='3', height='3')
+						g
+							rect(y='5', fill='#ccc', width='3', height='3')
+						g
+							rect(y='10', fill='#ccc', width='3', height='3')
+						g
+							rect(x='5', y='1', fill='#ccc', width='9', height='1')
+						g
+							rect(x='5', y='11', fill='#ccc', width='9', height='1')
+						g
+							rect(x='5', y='6', fill='#ccc', width='9', height='1')
+
+
+				a(href="shop.html" class=obj.columnActive).switch-column
+					svg(x='0px', y='0px', width='16px', height='10px', viewbox='0 0 16 10', enable-background='new 0 0 16 10')
+						g
+							rect(x='0', fill='#ccc', width='4', height='4')
+						g
+							rect(x='6', fill='#ccc', width='4', height='4')
+						g
+							rect(x='12', fill='#ccc', width='4', height='4')
+						g
+							rect(x='0', y='6', fill='#ccc', width='4', height='4')
+						g
+							rect(x='6', y='6', fill='#ccc', width='4', height='4')
+						g
+							rect(x='12', y='6', fill='#ccc', width='4', height='4')
+
+		.sortable-box
+			span.switch-text Sort By:
+			//Select 2
+			select.form-control.select-filter(data-placeholder="Select an option", data-minimum-results-for-search="Infinity", data-constraints="@Required")
+				option(value="1") News
+				option(value="2") From A to Z
+				option(value="3") From Z to A
+

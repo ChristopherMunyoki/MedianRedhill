@@ -1,0 +1,103 @@
+extends  ../_skeleton
+
+//- Includes
+
+block variables
+	- var activeIndex = 5
+	- var pageName = 'Competitions'
+	- var pageClass = ''
+
+block title
+	title=pageName
+
+block page
+	// Page Header
+	+navbar-default({})
+
+	+page-title({
+		title: pageName,
+		imageName: 'breadcrumbs-competitions',
+		path: [['Additional Pages', '#'], [pageName]]
+	})
+
+	section.section-md.bg-white
+		.shell.shell-fluid-var-4
+			.range.range-70.range-xlg-0.range-lg-justify
+				.cell-lg-9.cell-xs-12.cell-lg-container
+
+					.range.range-50.range-center
+						.cell-sm-12.cell-xs-10
+							.post.post-var-3.post-variant-4
+								.unit.unit-spacing-0.unit-sm-horizontal
+									.unit__left
+										a(href="single-post.html"): +jpg("competitions-2-447x412")
+
+									.unit__body
+										.post-content.post-content-2
+											.post-content-wrap-2
+												h4: a(href="single-post.html") Put Your Best Face to Enjoy This Summer
+												.group-sm
+													p.post-panel
+														span.mdi.mdi-sm.mdi-clock
+														time(datetime="2017-05-06") may 6, 2017
+
+													p.post-panel
+														span.fl-justicons-visible6
+														span 6424
+												p Summer is the time when all of our layers from winter and spring come off and we are finally ready for some good solid fun in the sun. Not only is more of our skin exposed in bright colored tank tops, skirts and dresses, we are all looking...
+												a(href="single-post.html").button.button-lg.button-effect-ujarak.button-gray-1 Read more
+
+						.cell-sm-12.cell-xs-10
+							.post.post-var-3.post-variant-4
+								.unit.unit-spacing-0.unit-sm-horizontal
+									.unit__left
+										a(href="single-post.html"): +jpg("competitions-3-447x412")
+
+									.unit__body
+										.post-content.post-content-2
+											.post-content-wrap-2
+												h4: a(href="single-post.html") 6 Facts - The Health Benefits of Surfing
+												.group-sm
+													p.post-panel
+														span.mdi.mdi-sm.mdi-clock
+														time(datetime="2017-04-21") February 24, 2017
+
+													p.post-panel
+														span.fl-justicons-visible6
+														span 898
+												p In our today’s issue of “6 Facts” weekly blog series we would like to share what health benefits surfing has. You may have noticed that many surfers don’t look their age, are usually in a good mood, and genuinely look forward to being...
+												a(href="single-post.html").button.button-lg.button-effect-ujarak.button-gray-1 Read more
+
+						.cell-sm-12.cell-xs-10
+							.post.post-var-3.post-variant-4
+								.unit.unit-spacing-0.unit-sm-horizontal
+									.unit__left
+										a(href="single-post.html"): +jpg("competitions-4-447x412")
+
+									.unit__body
+										.post-content.post-content-2
+											.post-content-wrap-2
+												h4: a(href="single-post.html") Lipstick Tricks You Don’t Know About
+												.group-sm
+													p.post-panel
+														span.mdi.mdi-sm.mdi-clock
+														time(datetime="2017-03-12") march 12, 2017
+
+													p.post-panel
+														span.fl-justicons-visible6
+														span 6424
+												p You don’t have to be a makeup genius to know that lipstick can make a big impact—taking your face from drab to dramatic or simple to sexy—in seconds. But these brilliant expert tips will show you how to make it look better, last longer...
+
+												a(href="single-post.html").button.button-lg.button-effect-ujarak.button-gray-1 Read more
+
+					+pagination(['text-center offset-sm-top-70'])
+
+
+
+				.cell-lg-3.cell-xs-12
+					include ../sections/_sidebar-short-2
+
+	='\n'
+
+	// Page Footer
+	include ../sections/_footer-var-2

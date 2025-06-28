@@ -1,0 +1,104 @@
+/*
+*
+* Element groups
+* --------------------------------------------------
+*/
+
+html .page {
+  .group {
+    @include group(15px, 20px);
+  }
+
+  .group-xs {
+    @include group(5px, 5px);
+  }
+
+  .group-sm {
+    @include group(15px, 15px);
+  }
+
+  .group-md {
+    @include group(25px, 10px);
+  }
+
+  .group-lg {
+    @include group(30px, 15px);
+  }
+
+  .group-xl {
+    @include group(15px, 15px);
+
+    @media (min-width: $screen-md-min) {
+      @include group(40px, 25px);
+    }
+    @media (min-width: $screen-lg-min) {
+      @include group(90px, 30px);
+    }
+  }
+
+  .group-sm-sidebar {
+    @include group(15px, 5px);
+  }
+
+  .group-top {
+    > *, > *:first-child {
+      vertical-align: top;
+    }
+  }
+
+  .group-middle {
+    @include display-flex();
+    @include flex-direction(row);
+    @include flex-wrap(wrap);
+    @include align-items(center);
+  }
+
+  .group-bottom {
+    > *, > *:first-child {
+      vertical-align: bottom;
+    }
+  }
+
+  .group-sm-justify {
+    .button {
+      min-width: 165px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    @media (min-width: $screen-sm-min) {
+      @include display-flex;
+      @include flex-direction(row);
+      @include align-items(center);
+      @include justify-content(center);
+
+      > * {
+        @include flex-grow(1);
+        @include flex-shrink(0);
+      }
+
+      .btn {
+        min-width: 130px;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+  }
+
+  .button-group {
+    @include group(12px, 12px);
+
+    .button {
+      width: 100%;
+      max-width: 202px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    @media (max-width: $screen-xs-max) {
+      > span {
+        width: 100%;
+      }
+    }
+  }
+}

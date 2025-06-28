@@ -1,0 +1,107 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-progress-bar-linear
+
+block variables
+  - var activeIndex = 5
+  - var pageName = 'Progress Bars, Skill Bars, Counters'
+
+block title
+  title Progress Bars
+
+block page
+  // Page Header
+  +navbar-default({})
+
+  +page-title({
+    title: pageName,
+    imageName: 'breadcrumbs-typography',
+    path: [['Additional Pages', '#'], [pageName]]
+  })
+
+  // Progress bars
+  section.section-md.bg-white.text-center
+    .shell
+      h3.text-regular.spacing-0=pageName
+      p.biger.text-width-large These elements are vital to every website’s design, and with them you are able to improve the overall look of your resource and attract more clients.
+
+      .range.range-md-reverse.range-50.text-left
+        .cell-sm-12.cell-md-6.cell-lg-6
+          .inset-md-top-20.inset-lg-left-100
+            h4 Welcome to our website
+            p.offset-top-30 Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page. It will tell you lots of interesting things about our company, its products and services, highly professional staff and happy customers.
+
+        .cell-md-6.cell-md-condensed
+          +progress-bar-linear({
+            title: "Lifestyle",
+            progressStyle: "progress-linear-primary",
+            valueTo: "75"
+          })
+
+          +progress-bar-linear({
+            title: "Health Tips",
+            progressStyle: "progress-linear-primary",
+            valueTo: "85"
+          })
+
+          +progress-bar-linear({
+            title: "Fashion News",
+            progressStyle: "progress-linear-primary",
+            valueTo: "80"
+          })
+  ='\n'
+
+  // Counters
+  section.bg-gray-1
+    .shell
+      .range.range-condensed.range-custom-bordered
+        .cell-xs-6.cell-sm-3
+          .box-counter.box-counter-inset-2
+            .counter(data-from='0', data-to='10') 10
+            p.box-counter-title Years of Experience
+
+        .cell-xs-6.cell-sm-3
+          .box-counter.box-counter-inset-2
+            .counter(data-from='0', data-to='07') 07
+            p.box-counter-title Partners
+
+        .cell-xs-6.cell-sm-3
+          .box-counter.box-counter-inset-2
+            .counter(data-from='0', data-to='16') 26
+            p.box-counter-title Qualified Specialists
+
+        .cell-xs-6.cell-sm-3
+          .box-counter.box-counter-inset-2
+            .counter(data-from='0', data-to='12') 12
+            p.box-counter-title New Articles Daily
+  ='\n'
+
+  // Circle Progress Bars
+  section.section-xmd.bg-white.text-center
+    .shell
+      .range.range-50
+        .cell-xs-6.cell-sm-4.cell-md-3
+          // Circle Progress Bar
+          .progress-bar-circle(data-gradient='#aa6ecf', data-empty-fill='rgb(245,245,245)', data-size='184', data-thickness='5')
+            span 0.73
+          p.progress-title Leadership
+        .cell-xs-6.cell-sm-4.cell-md-3
+          // Circle Progress Bar
+          .progress-bar-circle(data-gradient='#aa6ecf', data-empty-fill='rgb(245,245,245)', data-size='184', data-thickness='5')
+            span 0.11
+          p.progress-title Management
+        .cell-xs-6.cell-sm-4.cell-md-3
+          // Circle Progress Bar
+          .progress-bar-circle(data-gradient='#aa6ecf', data-empty-fill='rgb(245,245,245)', data-size='184', data-thickness='5')
+            span 0.13
+          p.progress-title Innovation and Creativity
+        .cell-xs-6.cell-sm-4.cell-md-3
+          // Circle Progress Bar
+          .progress-bar-circle(data-gradient='#aa6ecf', data-empty-fill='rgb(245,245,245)', data-size='184', data-thickness='5')
+            span 0.59
+          p.progress-title Resilience
+  ='\n'
+
+  // Page Footer 
+  include ../sections/_footer-var-2

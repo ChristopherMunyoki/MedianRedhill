@@ -1,0 +1,72 @@
+extends  ../_skeleton
+
+block variables
+	- var activeIndex = 5
+	- var pageName = 'Site map'
+	- var pageClass = ''
+
+block title
+	title=pageName
+
+block page
+	// Page Header
+	+navbar-default({})
+
+	+page-title({
+		title: pageName,
+		imageName: 'breadcrumbs-map',
+		path: [['Additional Pages', '#'], [pageName]]
+	})
+
+	section.section-md.bg-white.text-left
+		.shell
+			.range.regne-60.range-center
+				.cell-lg-3.cell-md-4.cell-sm-5.cell-xs-6
+					h4.list-title Home
+					ul.list-marked-2
+						li.marked-home: a(href="./") Life News
+
+					h4.list-title Blog
+					ul.list-marked-2
+						li: a(href="fitness.html") Fitness
+						li: a(href="food.html") Food
+						li: a(href="health.html") Health
+						li: a(href="love.html") Love
+						li: a(href="beauty.html") Beauty
+						li: a(href="beauty-list.html") Beauty List
+						li: a(href="single-post.html") Single post
+
+					h4.list-title Pages 1
+					ul.list-marked-2
+						li: a(href="about-us.html") About Us
+						li: a(href="careers.html") Careers
+						li: a(href="shop.html") Shop
+						li: a(href="shop-list.html") Shop List
+						li: a(href="single-product.html") Single Product
+						li: a(href="cart-page.html") Cart Page
+						li: a(href="competitions.html") Competitions
+						li: a(href="partner-with-us.html") Partner with Us
+
+				.cell-lg-3.cell-md-4.cell-sm-5.cell-xs-6
+					h4.list-title Pages 2
+					ul.list-marked-2
+						li: a(href="coming-soon.html") Coming Soon
+						li: a(href="503.html") 503
+						li: a(href="404.html") 404
+						li: a(href="site-map.html") Site Map
+						li: a(href="privacy-policy.html") Privacy Policy
+						li: a(href="maintenance.html") Maintenance
+						li: a(href="contacts.html") Contacts
+
+					h4.list-title Elements
+					ul.list-marked-2
+						li: a(href="typography.html") Typography
+						li: a(href="forms.html") Forms
+						li: a(href="buttons.html") Buttons
+						li: a(href="progress-bars.html") Progress Bars
+						li: a(href="tabs-&-accordions.html") Tabs & Accordions
+						li: a(href="tables.html") Tables
+						li: a(href="grid.html") Grid
+
+	// Page Footer
+	include ../sections/_footer-var-2

@@ -1,0 +1,309 @@
+/*
+*
+* Lists
+* --------------------------------------------------
+*/
+
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+.list {
+  > li + li {
+    margin-top: 10px;
+  }
+}
+
+
+// List inline
+//
+
+.list-inline {
+  margin-left: -5px;
+  margin-right: -5px;
+
+  > li {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+
+// Description Lists
+//
+
+dl {
+  margin: 0;
+}
+
+
+// List terms
+//
+
+.list-terms {
+  margin-top: 35px;
+  dt + dd { margin-top: 5px; }
+  dd + dt { margin-top: 25px; }
+}
+
+
+// List index
+//
+
+.list-index {
+  counter-reset: li;
+
+  li {
+    .list-index-counter {
+      &:before {
+        content: counter(li, decimal)". ";
+        counter-increment: li;
+      }
+    }
+  }
+}
+
+
+// List marked
+//
+
+.list-marked {
+  text-align: left;
+
+  > li {
+    position: relative;
+    padding-left: 25px;
+
+    &:before {
+      position: absolute;
+      top: -1px;
+      left: 0;
+      content: '\f105';
+      font: 400 16px/24px 'FontAwesome';
+      color: $gray-lighter;
+    }
+
+    a {
+      @include link($primary, $gray);
+    }
+  }
+
+  > li + li {
+    margin-top: 10px;
+  }
+
+  @media (min-width: $screen-xs-min) {
+    padding-left: 26px;
+  }
+}
+
+.list-marked-2 {
+  text-align: left;
+
+  > .marked-home {
+
+    &:before {
+      content: "\f0f6";
+    }
+  }
+
+  > li {
+    position: relative;
+    padding-left: 36px;
+
+    &:before {
+      position: absolute;
+      top: -1px;
+      left: 0;
+      content: "\f0c5";
+      font: 400 15px/24px 'FontAwesome';
+      color: $gray-darker;
+    }
+
+    a {
+      @include link($gray-darker, $primary);
+    }
+  }
+
+  > li + li {
+    margin-top: 10px;
+  }
+}
+
+h4 + .list-marked-2 {
+  margin-top: 28px;
+}
+
+.list-marked-2 + h4 {
+  margin-top: 60px;
+}
+
+.list-title {
+  position: relative;
+  padding-bottom: 13px;
+  font-weight: 400;
+  letter-spacing: 0;
+
+  &:before {
+    position: absolute;
+    content: '';
+    height: 1px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #e1e1e1;
+  }
+}
+
+// Ordered list
+.list-ordered {
+  text-align: left;
+  counter-reset: li;
+
+  li {
+    position: relative;
+    padding-left: 25px;
+
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: inline-block;
+      width: 15px;
+      content: counter(li, decimal) '.';
+      counter-increment: li;
+      color: $gray-lighter;
+    }
+  }
+
+  li + li {
+    margin-top: 10px;
+  }
+
+  @media (min-width: $screen-xs-min) {
+    padding-left: 26px;
+  }
+}
+
+// Two columns list
+.list-two-columns {
+  > * {
+    display: inline-block;
+    width: 45%;
+  }
+}
+
+.list-md-two-columns {
+  @media (min-width: $screen-md-min) {
+    > * {
+      display: inline-block;
+      width: 45%;
+    }
+  }
+}
+
+// Custom styles list
+.list-size-small {
+  font-size: 12px;
+}
+
+.list-size-big {
+  font-size: 16px;
+
+  li {
+    &:before {
+      font-size: 18px;
+      line-height: 27px;
+    }
+  }
+}
+
+.list-family-sec {
+  font-family: $font-family-sec;
+}
+
+.list-bold {
+  font-weight: 700;
+}
+
+.list-uppercase {
+  text-transform: uppercase;
+}
+
+.list-white {
+  color: $white;
+}
+
+.list-gray-darker {
+  color: $gray-darker;
+}
+
+// Switch lists
+
+.switch-box {
+  min-width: 187px;
+  text-align: center;
+
+  > span {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  @media (max-width: $screen-xs-max) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.switch-box-inset {
+  padding: 7px 25px;
+  border: 1px solid $gray-11;
+
+  @media (min-width: $screen-sm-min) {
+    padding-top: 13px;
+    padding-bottom: 13px;
+  }
+}
+
+.switch-item {
+  margin-left: 22px;
+
+  > a {
+    @include display-inline-flex();
+    @include align-items(center);
+    @include justify-content(center);
+    cursor: pointer;
+    vertical-align: middle;
+    width: 32px;
+    height: 32px;
+    background: $gray-5;
+    transition: all 300ms ease-in-out;
+
+    rect {
+      transition: all 300ms ease-in-out;
+    }
+
+    &:hover,
+    &.active {
+      background: $primary;
+
+      rect {
+        fill: $white;
+      }
+    }
+  }
+
+  > a + a { margin-left: 10px; }
+}
+
+.switch-text {
+  display: inline-block;
+  vertical-align: middle;
+  color: $gray-base;
+  margin-right: 8px;
+}

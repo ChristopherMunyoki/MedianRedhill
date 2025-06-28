@@ -1,0 +1,227 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_post-var-1
+include ../elements/_ui-insta-thumb-big
+
+block variables
+	- var activeIndex = 4
+	- var pageName = 'Single Post'
+	- var pageClass = ''
+
+block title
+	title Single Post
+
+block page
+	// Page Header
+	+navbar-default({})
+
+	+page-title({
+		title: pageName,
+		imageName: 'breadcrumbs-post',
+		path: [['Beauty', 'beauty.html'], [pageName]]
+	})
+
+	section.section-md.section-bottom-lg-200.bg-white
+		.shell.shell-fluid-var-4
+			.range.range-50.range-xs-90.range-lg-justify
+				.cell-lg-9.cell-xs-12.cell-lg-container
+					.range.range-50.range-xs-90.range-center
+						.cell-xs-12
+							.post-big
+								.post-panel-top-between
+									.group-sm
+										span.post-panel
+											span.mdi.mdi-sm.mdi-clock
+											time(datetime="2017-03-12") march 12, 2017
+
+										a(href="#").post-panel
+											span.mdi.mdi-sm.mdi-thumb-up-outline
+											span 244
+
+										span.post-panel
+											span.fl-justicons-visible6
+											span 524
+
+									a(href="#").post-panel
+										span.mdi.mdi-md.mdi-account-outline
+										span by
+											=" "
+											span.text-uppercase Amanda Emerson
+
+								.post-big-item
+									h4 Lipstick Tricks You Probably Don’t Know About
+									p You don’t have to be a makeup genius to know that lipstick can make a big impact—taking your face from drab to dramatic or simple to sexy—in seconds. But these brilliant expert tips will show you how to make it look better, last longer and work harder. We hope that this article will help you enhance your look and mark out your lips as it is an important element of woman’s image.
+									+jpg('post-1-1024x453')
+
+									p First, it’s recommended that you gently exfoliate lips before applying color to make sure it goes on flawlessly, especially if you’re swiping on a dark or bold pigment that can accentuate every imperfection. “I love using a homemade scrub of sugar and honey to remove flakes and dryness,” says Dana Chasen Thomases, a makeup artist and owner of Beauty Muse Bridal.
+									p If you want the exact color you see in the tube, you need to start with a blank canvas and not the pink one that’s created by your natural lip color. To create a blank canvas, apply a thin coat of foundation all over your lips and blend over your lip line so it disappears into the rest of your skin. Or apply a smidgen of lip balm on the lips, blot and add a neutral powder to create an impromptu base that can last even longer than foundation, says makeup artist Hillary Clark. You can make any lipstick go the distance by following the following steps. After applying a coat of lipstick, blot it with a single-ply tissue. Then use a large eye shadow brush to dust the lips with a small amount of translucent powder. Follow with another layer of lipstick. Finally blot and powder twice before applying a final swipe of lipstick.
+
+									.post-big-title-box.text-center
+										h4.text-secondary-dark Deep dark red can make thin lips look even skinnier. To maximize a scarlet smile, opt instead for a bright orange-red.
+
+									p These are only some makeup tips that we are ready to share with you in this post. Our bloggers and fashion journalists are now working on new articles, which we hope will broaden your knowledge about modern makeup. Next article will include recommendations from widely known makeup artists on using liner and shadow, picking your everyday pink lipstick, and other interesting beauty hacks you need to know.
+
+								.range.range-30
+									.cell-sm-6
+										+jpg('post-1-490x346')
+
+									.cell-sm-6
+										+jpg('post-2-490x346')
+
+								.post-panel-bottom-between
+									h5 Share this Post:
+
+									.group-sm
+										a(href='#').button.button-facebook.button-icon.button-icon-left.button-post.button-rounded
+											span.icon.fa.fa-facebook
+											| Like
+
+										a(href='#').button.button-twitter.button-icon.button-icon-left.button-post.button-rounded
+											span.icon.fa.fa-twitter
+											| Tweet
+
+										a(href='#').button.button-google.button-icon.button-icon-left.button-post.button-rounded
+											span.icon.fa.fa-google-plus
+											| Share
+
+						.cell-xs-12.text-center
+							p.title-decor-bottom Related posts
+
+							.range.range-30.range-center
+								.cell-md-4.cell-sm-12.cell-xs-10
+									+post-var-1({
+										imgName: "beauty-1-347x241",
+										postClass: 'post-var-1 post-custom-1',
+										unitClass: 'unit-sm-horizontal unit-md-vertical',
+										postTags1: "Beauty",
+										postTags2: "Makeup",
+										postTitle: "8 Makeup Tips Every Woman Should Know",
+										postText: "Some makeup techniques may seem easy to follow, but they show great results...",
+										dateTime: "2017-01-03",
+										postTime: "january 3, 2017",
+										postViews: "524",
+									})
+
+								.cell-md-4.cell-sm-12.cell-xs-10
+									+post-var-1({
+										imgName: "beauty-2-347x241",
+										postClass: 'post-var-1 post-custom-1',
+										unitClass: 'unit-sm-horizontal unit-md-vertical',
+										postTags1: "Beauty",
+										postTags2: "Hair",
+										postTitle: "Choosing Hair Color: The Ultimate Guide",
+										postText: "Your most beautiful hair color will bring out the subtleties of your skin tone and...",
+										dateTime: "2017-01-15",
+										postTime: "january 15, 2017",
+										postViews: "524",
+									})
+
+								.cell-md-4.cell-sm-12.cell-xs-10
+									+post-var-1({
+										imgName: "beauty-3-347x241",
+										postClass: 'post-var-1 post-custom-1',
+										unitClass: 'unit-sm-horizontal unit-md-vertical',
+										postTags1: "Beauty",
+										postTags2: "Fashion",
+										postTitle: "Expert Tips for Natural Makeup",
+										postText: "Whether you're easing yourself into makeup or would simply like to try...",
+										dateTime: "2017-01-20",
+										postTime: "January 20, 2017",
+										postViews: "524",
+									})
+
+						.cell-xs-12.text-center.comment-wrap
+							p.title-decor-bottom 3 comments
+
+							.box-comment.text-xs-left.box-comment-active
+								.unit.unit-xs-horizontal
+									.unit__left
+										.img-circle
+											+jpg('user-1-65x65')
+
+									.unit__body
+										.post-panel-between
+											p Edward
+											span.comment-date 3 days ago
+
+										p Thank you for such an informative post! I wasn’t sure how makeup works for girls, and now I have at least some basic understanding of the topic. However, I’m still looking for a present for my girlfriend’s birthday. I haven’t found any strict recommendations or rules what a girl of her age wants to have as a present (she’s 21). By the way, if you are planning to continue your series of posts about healthy food and drinks, I’d really appreciate it. Thanks again for this publication!
+
+										.group-lg
+
+											a(href="#").post-panel.post-like
+												span.mdi.mdi-thumb-up-outline
+												span 32
+
+											a(href="#").post-panel.post-comments
+												span.mdi.mdi-comment-outline
+												span Reply
+
+								.box-comment
+									.unit.unit-xs-horizontal.unit-spacing-sm
+										.unit__left
+											.img-circle
+												+jpg('user-2-65x65')
+
+										.unit__body
+											.post-panel-between
+												p Nina
+												span.comment-date 1 days ago
+
+											p I completely agree with you, this article was also very informative for me. Concerning your question, I think you should search the website for some tips and tricks on presents. There are lots of articles for girls here and some of them are product reviews. Don’t forget to read comments to these articles; they may be really helpful sometimes.
+
+											.group-lg
+
+												a(href="#").post-panel.post-like
+													span.mdi.mdi-thumb-up-outline
+													span 32
+
+												a(href="#").post-panel.post-comments
+													span.mdi.mdi-comment-outline
+													span Reply
+
+							.box-comment.text-xs-left
+								.unit.unit-xs-horizontal
+									.unit__left
+										.img-circle
+											+jpg('user-3-65x65')
+
+									.unit__body
+										.post-panel-between
+											p John
+											span.comment-date 3 days ago
+
+										p I think I said it in your recent post but your articles are pure amazement! Always easy to read and there’s a lot of interesting information and facts in each article you post. This one is no exception. I Don’t Know what hides behind numerous “makeup tips and tricks” from many modern makeup artists. Now it’s a little bit clearer for me. I think I’ll share this article with my wife; she always reads such articles and I hope this one will also be very interesting for her!
+
+										.group-lg
+
+											a(href="#").post-panel.post-like
+												span.mdi.mdi-thumb-up-outline
+												span 32
+
+											a(href="#").post-panel.post-comments
+												span.mdi.mdi-comment-outline
+												span Reply
+
+							.box-comment.box-comment-input.text-xs-left
+								.unit.unit-xs-horizontal
+									.unit__left
+										.img-circle
+											+jpg('user-4-65x65')
+
+									.unit__body
+										.post-panel-between
+											p Miranda
+
+										form.rd-mailform.text-center.text-xs-left(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+											.form-wrap
+												textarea#contact-message.form-input(name="message" data-constraints="@Required")
+												label.form-label(for="contact-message") Your Comment
+
+											button(type="submit").button.button-lg.btn-anis.button-gray-1 Submit
+
+				.cell-lg-3.cell-xs-12
+					include ../sections/_sidebar-long
+
+	// Page Footer
+	include ../sections/_footer-var-2

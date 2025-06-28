@@ -1,0 +1,129 @@
+//
+// Page title
+// --------------------------------------------------
+.page-title {
+  position: relative;
+  z-index: 1;
+  padding: 40px 15px;
+  text-align: center;
+
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center 50%;
+  background-color: #1b181d;
+}
+
+.breadcrumbs-typography {
+  background-image: url(../images/breadcrumbs-typography.jpg);
+}
+
+.breadcrumbs-fitness {
+  background-image: url(../images/breadcrumbs-fitness.jpg);
+}
+
+.breadcrumbs-food {
+  background-image: url(../images/breadcrumbs-food.jpg);
+}
+
+.breadcrumbs-health {
+  background-image: url(../images/breadcrumbs-health.jpg);
+}
+
+.breadcrumbs-love {
+  background-image: url(../images/breadcrumbs-love.jpg);
+}
+
+.breadcrumbs-beauty {
+  background-image: url(../images/breadcrumbs-beauty.jpg);
+}
+
+.breadcrumbs-careers {
+  background-image: url(../images/breadcrumbs-careers.jpg);
+}
+
+.breadcrumbs-shop {
+  background-image: url(../images/breadcrumbs-shop.jpg);
+}
+
+.breadcrumbs-404 {
+  background-image: url(../images/breadcrumbs-404.jpg);
+}
+
+.breadcrumbs-503 {
+  background-image: url(../images/breadcrumbs-503.jpg);
+}
+
+.breadcrumbs-map {
+  background-image: url(../images/breadcrumbs-map.jpg);
+}
+
+.breadcrumbs-post {
+  background-image: url(../images/breadcrumbs-post.jpg);
+
+  .page-title-text {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 650px;
+  }
+}
+
+.breadcrumbs-competitions {
+  background-image: url(../images/breadcrumbs-competitions.jpg);
+}
+
+.breadcrumbs-about {
+  background-image: url(../images/breadcrumbs-about.jpg);
+}
+
+.breadcrumbs-partner {
+  background-image: url(../images/breadcrumbs-partner.jpg);
+}
+
+.breadcrumbs-maintenance {
+  background-image: url(../images/breadcrumbs-maintenance.jpg);
+}
+
+.breadcrumbs-privacy {
+  background-image: url(../images/breadcrumbs-privacy.jpg);
+}
+
+.breadcrumbs-contacts {
+  background-image: url(../images/breadcrumbs-contacts.jpg);
+}
+
+.page-title-text {
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  font-size: 28px;
+  line-height: 1.458;
+  letter-spacing: 0;
+  color: $white;
+}
+
+@media (min-width: $screen-sm-min) {
+  .page-title {
+    padding: 60px 15px;
+  }
+
+  .page-title-text {
+    font-size: 42px;
+  }
+}
+
+
+@media (min-width: $screen-md-min) {
+  .page-title-text {
+    font-size: $font-size-h2;
+  }
+}
+
+@media (min-width: $screen-lg-min) {
+  .page-title {
+    padding: 102px 15px;
+  }
+
+  .page-title-lg-inset {
+    padding-top: 112px;
+    padding-bottom: 112px;
+  }
+}

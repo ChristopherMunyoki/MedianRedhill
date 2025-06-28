@@ -1,0 +1,11 @@
+mixin thumbnail-instafeed-big(obj)
+  - if (typeof(obj) === 'undefined') var obj = {};
+  .thumbnail-instafeed(class= obj.className)
+    .thumb__overlay
+    a(data-lightgallery='group-item' href='#' data-images-standard_resolution-url='href')
+      img(src='images/_blank.png', alt='', data-images-standard_resolution-url='src')
+    .caption
+      ul.list-inline
+        li
+          span.icon.mdi.mdi-thumb-up-outline
+          span(data-likes-count='text')
